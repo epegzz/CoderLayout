@@ -16,11 +16,13 @@
 
 ### Milestones:
 
-1. Have a kernel extension loading and logging to Console.app
-2. Have gdb set up to debug the extension
-3. Have a Swift app communicating with the KEXT
-	-> press a button in the app and have KEXT logging a message
-
+- Have KEXT loading and logging to Console.app
+- Have gdb set up to debug the KEXT
+- Have KEXT intercepting and logging a pressed key
+- Have KEXT intercepting and dropping a specific pressed key
+- Have App reading keyboards event from KEXT via socket
+- Have KEXT reading event from App via socket
+- Have KEXT creating a new keyboard event
 
 ## FAQ
 
