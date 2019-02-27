@@ -1,0 +1,29 @@
+{
+  "name": "@epegzz/coderlayout",
+  "version": "1.0.0",
+  "description": "A power user keyboard layout",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "karabiner:generate": "node karabiner/scripts/generate.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/epegzz/CoderLayout.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/epegzz/CoderLayout/issues"
+  },
+  "homepage": "https://github.com/epegzz/CoderLayout#readme",
+  "devDependencies": {
+    "eslint": "^5.14.1",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "prettier": "^1.16.4"
+  }
+}
