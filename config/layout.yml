@@ -1,0 +1,26 @@
+layers:
+  numbers:
+    description: "Numbers Layer"
+    trigger: grave_accent_and_tilde
+    mapping:
+      spacebar: 0
+      m: 1
+      comma: 2
+      period: 3
+      j: 4
+      k: 5
+      l: 6
+      u: 7
+      i: 8
+      o: 9
+      
+      
+
+#  navigation:
+#    description: "Navigation Layer"
+#    mapping:
+#      j:
+#        to: left_arrow
+#      k:
+#        to: down_arrow
+
