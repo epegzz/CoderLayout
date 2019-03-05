@@ -18,8 +18,6 @@ const config = yaml.safeLoad(
   fs.readFileSync(path.resolve(__dirname, '../../config/layout.yml'), 'utf8')
 )
 
-console.log('----', config)
-
 function createLayer(layerName, { trigger, description, mapping }) {
   const manipulators = []
   const layerVariableName = `${layerName}_layer`
@@ -85,6 +83,35 @@ function createLayer(layerName, { trigger, description, mapping }) {
 for (const layerName in config.layers) {
   const layerConfig = config.layers[layerName]
   rules.push(createLayer(layerName, layerConfig))
+
+  // Spacebar acts as shift
+  rules.push({
+    manipulators: [
+      {
+        description: 'Spacebar to left_shift',
+        from: {
+          key_code: 'spacebar',
+          modifiers: {
+            optional: ['any'],
+          },
+        },
+        to: [
+          {
+            key_code: 'left_shift',
+          },
+        ],
+        to_if_alone: [
+          {
+            key_code: 'spacebar',
+            modifiers: {
+              optional: ['any'],
+            },
+          },
+        ],
+        type: 'basic',
+      },
+    ],
+  })
 }
 
 fs.writeFileSync(
