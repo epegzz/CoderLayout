@@ -2,6 +2,8 @@ const fs = require('fs')
 const path = require('path')
 const yaml = require('js-yaml')
 
+const normalizeConfig = require('../../utils/normalizeConfig')
+
 const TEMPLATE_KARABINER_JSON_FILENAME = path.resolve(
   __dirname,
   '../karabiner.template.json'
@@ -14,11 +16,11 @@ const DIST_KARABINER_JSON_FILENAME = path.resolve(
 const configOut = JSON.parse(fs.readFileSync(TEMPLATE_KARABINER_JSON_FILENAME))
 const rules = configOut.profiles[0].complex_modifications.rules
 
-const config = yaml.safeLoad(
+const config = normalizeConfig(yaml.safeLoad(
   fs.readFileSync(path.resolve(__dirname, '../../config/layout.yml'), 'utf8')
-)
+))
 
-function createLayer(layerName, { trigger, description, mapping }) {
+function createLayer(layerName, { trigger, description, mappings }) {
   const manipulators = []
   const layerVariableName = `${layerName}_layer`
 
@@ -49,7 +51,7 @@ function createLayer(layerName, { trigger, description, mapping }) {
     type: 'basic',
   })
 
-  for (const fromKey in mapping) {
+  for (const mapping of mappings) {
     manipulators.push({
       conditions: [
         {
@@ -59,17 +61,13 @@ function createLayer(layerName, { trigger, description, mapping }) {
         },
       ],
       from: {
-        key_code: String(fromKey),
+        key_code: mapping.from.key_code,
         modifiers: {
           mandatory: [],
           optional: ['any'],
         },
       },
-      to: [
-        {
-          key_code: String(mapping[fromKey]),
-        },
-      ],
+      to: mapping.to,
       type: 'basic',
     })
   }
