@@ -1,5 +1,3 @@
-const reduce = require('lodash/reduce')
-
 function normalizeConfig(inputObj = {}) {
   const result = {}
   result.layers = normalizeLayers(inputObj.layers)

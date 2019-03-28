@@ -13,7 +13,26 @@ layers:
       - u: 7
       - i: 8
       - o: 9
-      
+
+  navigation_plus:
+    description: "Navigation Layer Plus"
+    trigger: [left_command, spacebar]
+    mappings:
+    - j:
+        key_code: left_arrow
+        modifier: left_option
+    - k:
+        key_code: down_arrow
+        modifier: left_option
+    - l:
+        key_code: right_arrow
+        modifier: left_option
+    - i:
+        key_code: up_arrow
+        modifier: left_option
+
+
+
   navigation:
     description: "Navigation Layer"
     trigger: left_command
@@ -48,5 +67,4 @@ layers:
         to:
           key_code: tab
           modifier: right_shift
-
 

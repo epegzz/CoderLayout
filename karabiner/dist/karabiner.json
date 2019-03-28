@@ -19,41 +19,6 @@
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "grave_accent_and_tilde",
-                                    "modifiers": {
-                                        "mandatory": [],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "numbers_layer",
-                                            "value": 1
-                                        }
-                                    }
-                                ],
-                                "to_after_key_up": [
-                                    {
-                                        "set_variable": {
-                                            "name": "numbers_layer",
-                                            "value": 0
-                                        }
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "type": "variable_if",
-                                        "name": "numbers_layer",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
                                     "key_code": "spacebar",
                                     "modifiers": {
                                         "mandatory": [],
@@ -67,16 +32,16 @@
                                         "key_code": "0"
                                     }
                                 ],
-                                "type": "basic"
-                            },
-                            {
+                                "type": "basic",
                                 "conditions": [
                                     {
                                         "type": "variable_if",
-                                        "name": "numbers_layer",
+                                        "name": "trigger_grave_accent_and_tilde",
                                         "value": 1
                                     }
-                                ],
+                                ]
+                            },
+                            {
                                 "from": {
                                     "key_code": "m",
                                     "modifiers": {
@@ -91,16 +56,16 @@
                                         "key_code": "1"
                                     }
                                 ],
-                                "type": "basic"
-                            },
-                            {
+                                "type": "basic",
                                 "conditions": [
                                     {
                                         "type": "variable_if",
-                                        "name": "numbers_layer",
+                                        "name": "trigger_grave_accent_and_tilde",
                                         "value": 1
                                     }
-                                ],
+                                ]
+                            },
+                            {
                                 "from": {
                                     "key_code": "comma",
                                     "modifiers": {
@@ -115,16 +80,16 @@
                                         "key_code": "2"
                                     }
                                 ],
-                                "type": "basic"
-                            },
-                            {
+                                "type": "basic",
                                 "conditions": [
                                     {
                                         "type": "variable_if",
-                                        "name": "numbers_layer",
+                                        "name": "trigger_grave_accent_and_tilde",
                                         "value": 1
                                     }
-                                ],
+                                ]
+                            },
+                            {
                                 "from": {
                                     "key_code": "period",
                                     "modifiers": {
@@ -139,16 +104,16 @@
                                         "key_code": "3"
                                     }
                                 ],
-                                "type": "basic"
-                            },
-                            {
+                                "type": "basic",
                                 "conditions": [
                                     {
                                         "type": "variable_if",
-                                        "name": "numbers_layer",
+                                        "name": "trigger_grave_accent_and_tilde",
                                         "value": 1
                                     }
-                                ],
+                                ]
+                            },
+                            {
                                 "from": {
                                     "key_code": "j",
                                     "modifiers": {
@@ -163,16 +128,16 @@
                                         "key_code": "4"
                                     }
                                 ],
-                                "type": "basic"
-                            },
-                            {
+                                "type": "basic",
                                 "conditions": [
                                     {
                                         "type": "variable_if",
-                                        "name": "numbers_layer",
+                                        "name": "trigger_grave_accent_and_tilde",
                                         "value": 1
                                     }
-                                ],
+                                ]
+                            },
+                            {
                                 "from": {
                                     "key_code": "k",
                                     "modifiers": {
@@ -187,16 +152,16 @@
                                         "key_code": "5"
                                     }
                                 ],
-                                "type": "basic"
-                            },
-                            {
+                                "type": "basic",
                                 "conditions": [
                                     {
                                         "type": "variable_if",
-                                        "name": "numbers_layer",
+                                        "name": "trigger_grave_accent_and_tilde",
                                         "value": 1
                                     }
-                                ],
+                                ]
+                            },
+                            {
                                 "from": {
                                     "key_code": "l",
                                     "modifiers": {
@@ -211,16 +176,16 @@
                                         "key_code": "6"
                                     }
                                 ],
-                                "type": "basic"
-                            },
-                            {
+                                "type": "basic",
                                 "conditions": [
                                     {
                                         "type": "variable_if",
-                                        "name": "numbers_layer",
+                                        "name": "trigger_grave_accent_and_tilde",
                                         "value": 1
                                     }
-                                ],
+                                ]
+                            },
+                            {
                                 "from": {
                                     "key_code": "u",
                                     "modifiers": {
@@ -235,16 +200,16 @@
                                         "key_code": "7"
                                     }
                                 ],
-                                "type": "basic"
-                            },
-                            {
+                                "type": "basic",
                                 "conditions": [
                                     {
                                         "type": "variable_if",
-                                        "name": "numbers_layer",
+                                        "name": "trigger_grave_accent_and_tilde",
                                         "value": 1
                                     }
-                                ],
+                                ]
+                            },
+                            {
                                 "from": {
                                     "key_code": "i",
                                     "modifiers": {
@@ -259,16 +224,16 @@
                                         "key_code": "8"
                                     }
                                 ],
-                                "type": "basic"
-                            },
-                            {
+                                "type": "basic",
                                 "conditions": [
                                     {
                                         "type": "variable_if",
-                                        "name": "numbers_layer",
+                                        "name": "trigger_grave_accent_and_tilde",
                                         "value": 1
                                     }
-                                ],
+                                ]
+                            },
+                            {
                                 "from": {
                                     "key_code": "o",
                                     "modifiers": {
@@ -283,47 +248,23 @@
                                         "key_code": "9"
                                     }
                                 ],
-                                "type": "basic"
+                                "type": "basic",
+                                "conditions": [
+                                    {
+                                        "type": "variable_if",
+                                        "name": "trigger_grave_accent_and_tilde",
+                                        "value": 1
+                                    }
+                                ]
                             }
                         ]
                     },
                     {
-                        "manipulators": [
-                            {
-                                "description": "Spacebar to left_shift",
-                                "from": {
-                                    "key_code": "spacebar",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "left_shift"
-                                    }
-                                ],
-                                "to_if_alone": [
-                                    {
-                                        "key_code": "spacebar",
-                                        "modifiers": {
-                                            "optional": [
-                                                "any"
-                                            ]
-                                        }
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Navigation Layer",
+                        "description": "Navigation Layer Plus",
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "left_command",
+                                    "key_code": "j",
                                     "modifiers": {
                                         "mandatory": [],
                                         "optional": [
@@ -333,30 +274,128 @@
                                 },
                                 "to": [
                                     {
-                                        "set_variable": {
-                                            "name": "navigation_layer",
-                                            "value": 1
-                                        }
+                                        "key_code": "left_arrow",
+                                        "modifiers": [
+                                            "left_option"
+                                        ]
                                     }
                                 ],
-                                "to_after_key_up": [
-                                    {
-                                        "set_variable": {
-                                            "name": "navigation_layer",
-                                            "value": 0
-                                        }
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
+                                "type": "basic",
                                 "conditions": [
                                     {
                                         "type": "variable_if",
-                                        "name": "navigation_layer",
+                                        "name": "trigger_left_command",
+                                        "value": 1
+                                    },
+                                    {
+                                        "type": "variable_if",
+                                        "name": "trigger_spacebar",
                                         "value": 1
                                     }
+                                ]
+                            },
+                            {
+                                "from": {
+                                    "key_code": "k",
+                                    "modifiers": {
+                                        "mandatory": [],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "down_arrow",
+                                        "modifiers": [
+                                            "left_option"
+                                        ]
+                                    }
                                 ],
+                                "type": "basic",
+                                "conditions": [
+                                    {
+                                        "type": "variable_if",
+                                        "name": "trigger_left_command",
+                                        "value": 1
+                                    },
+                                    {
+                                        "type": "variable_if",
+                                        "name": "trigger_spacebar",
+                                        "value": 1
+                                    }
+                                ]
+                            },
+                            {
+                                "from": {
+                                    "key_code": "l",
+                                    "modifiers": {
+                                        "mandatory": [],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": [
+                                            "left_option"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic",
+                                "conditions": [
+                                    {
+                                        "type": "variable_if",
+                                        "name": "trigger_left_command",
+                                        "value": 1
+                                    },
+                                    {
+                                        "type": "variable_if",
+                                        "name": "trigger_spacebar",
+                                        "value": 1
+                                    }
+                                ]
+                            },
+                            {
+                                "from": {
+                                    "key_code": "i",
+                                    "modifiers": {
+                                        "mandatory": [],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "up_arrow",
+                                        "modifiers": [
+                                            "left_option"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic",
+                                "conditions": [
+                                    {
+                                        "type": "variable_if",
+                                        "name": "trigger_left_command",
+                                        "value": 1
+                                    },
+                                    {
+                                        "type": "variable_if",
+                                        "name": "trigger_spacebar",
+                                        "value": 1
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Navigation Layer",
+                        "manipulators": [
+                            {
                                 "from": {
                                     "key_code": "j",
                                     "modifiers": {
@@ -371,16 +410,16 @@
                                         "key_code": "left_arrow"
                                     }
                                 ],
-                                "type": "basic"
-                            },
-                            {
+                                "type": "basic",
                                 "conditions": [
                                     {
                                         "type": "variable_if",
-                                        "name": "navigation_layer",
+                                        "name": "trigger_left_command",
                                         "value": 1
                                     }
-                                ],
+                                ]
+                            },
+                            {
                                 "from": {
                                     "key_code": "k",
                                     "modifiers": {
@@ -395,16 +434,16 @@
                                         "key_code": "down_arrow"
                                     }
                                 ],
-                                "type": "basic"
-                            },
-                            {
+                                "type": "basic",
                                 "conditions": [
                                     {
                                         "type": "variable_if",
-                                        "name": "navigation_layer",
+                                        "name": "trigger_left_command",
                                         "value": 1
                                     }
-                                ],
+                                ]
+                            },
+                            {
                                 "from": {
                                     "key_code": "l",
                                     "modifiers": {
@@ -419,16 +458,16 @@
                                         "key_code": "right_arrow"
                                     }
                                 ],
-                                "type": "basic"
-                            },
-                            {
+                                "type": "basic",
                                 "conditions": [
                                     {
                                         "type": "variable_if",
-                                        "name": "navigation_layer",
+                                        "name": "trigger_left_command",
                                         "value": 1
                                     }
-                                ],
+                                ]
+                            },
+                            {
                                 "from": {
                                     "key_code": "i",
                                     "modifiers": {
@@ -443,16 +482,16 @@
                                         "key_code": "up_arrow"
                                     }
                                 ],
-                                "type": "basic"
-                            },
-                            {
+                                "type": "basic",
                                 "conditions": [
                                     {
                                         "type": "variable_if",
-                                        "name": "navigation_layer",
+                                        "name": "trigger_left_command",
                                         "value": 1
                                     }
-                                ],
+                                ]
+                            },
+                            {
                                 "from": {
                                     "key_code": "m",
                                     "modifiers": {
@@ -467,16 +506,16 @@
                                         "key_code": "return_or_enter"
                                     }
                                 ],
-                                "type": "basic"
-                            },
-                            {
+                                "type": "basic",
                                 "conditions": [
                                     {
                                         "type": "variable_if",
-                                        "name": "navigation_layer",
+                                        "name": "trigger_left_command",
                                         "value": 1
                                     }
-                                ],
+                                ]
+                            },
+                            {
                                 "from": {
                                     "key_code": "u",
                                     "modifiers": {
@@ -491,16 +530,16 @@
                                         "key_code": "delete_or_backspace"
                                     }
                                 ],
-                                "type": "basic"
-                            },
-                            {
+                                "type": "basic",
                                 "conditions": [
                                     {
                                         "type": "variable_if",
-                                        "name": "navigation_layer",
+                                        "name": "trigger_left_command",
                                         "value": 1
                                     }
-                                ],
+                                ]
+                            },
+                            {
                                 "from": {
                                     "key_code": "o",
                                     "modifiers": {
@@ -515,16 +554,16 @@
                                         "key_code": "delete_forward"
                                     }
                                 ],
-                                "type": "basic"
-                            },
-                            {
+                                "type": "basic",
                                 "conditions": [
                                     {
                                         "type": "variable_if",
-                                        "name": "navigation_layer",
+                                        "name": "trigger_left_command",
                                         "value": 1
                                     }
-                                ],
+                                ]
+                            },
+                            {
                                 "from": {
                                     "key_code": "h",
                                     "modifiers": {
@@ -542,16 +581,16 @@
                                         ]
                                     }
                                 ],
-                                "type": "basic"
-                            },
-                            {
+                                "type": "basic",
                                 "conditions": [
                                     {
                                         "type": "variable_if",
-                                        "name": "navigation_layer",
+                                        "name": "trigger_left_command",
                                         "value": 1
                                     }
-                                ],
+                                ]
+                            },
+                            {
                                 "from": {
                                     "key_code": "semicolon",
                                     "modifiers": {
@@ -569,16 +608,16 @@
                                         ]
                                     }
                                 ],
-                                "type": "basic"
-                            },
-                            {
+                                "type": "basic",
                                 "conditions": [
                                     {
                                         "type": "variable_if",
-                                        "name": "navigation_layer",
+                                        "name": "trigger_left_command",
                                         "value": 1
                                     }
-                                ],
+                                ]
+                            },
+                            {
                                 "from": {
                                     "key_code": "w",
                                     "modifiers": {
@@ -593,16 +632,16 @@
                                         "key_code": "tab"
                                     }
                                 ],
-                                "type": "basic"
-                            },
-                            {
+                                "type": "basic",
                                 "conditions": [
                                     {
                                         "type": "variable_if",
-                                        "name": "navigation_layer",
+                                        "name": "trigger_left_command",
                                         "value": 1
                                     }
-                                ],
+                                ]
+                            },
+                            {
                                 "from": {
                                     "key_code": "q",
                                     "modifiers": {
@@ -620,7 +659,100 @@
                                         ]
                                     }
                                 ],
-                                "type": "basic"
+                                "type": "basic",
+                                "conditions": [
+                                    {
+                                        "type": "variable_if",
+                                        "name": "trigger_left_command",
+                                        "value": 1
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Layer triggers",
+                        "manipulators": [
+                            {
+                                "type": "basic",
+                                "from": {
+                                    "key_code": "grave_accent_and_tilde",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "trigger_grave_accent_and_tilde",
+                                            "value": 1
+                                        }
+                                    }
+                                ],
+                                "to_after_key_up": [
+                                    {
+                                        "set_variable": {
+                                            "name": "trigger_grave_accent_and_tilde",
+                                            "value": 0
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "basic",
+                                "from": {
+                                    "key_code": "left_command",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "trigger_left_command",
+                                            "value": 1
+                                        }
+                                    }
+                                ],
+                                "to_after_key_up": [
+                                    {
+                                        "set_variable": {
+                                            "name": "trigger_left_command",
+                                            "value": 0
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "basic",
+                                "from": {
+                                    "key_code": "spacebar",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "trigger_spacebar",
+                                            "value": 1
+                                        }
+                                    }
+                                ],
+                                "to_after_key_up": [
+                                    {
+                                        "set_variable": {
+                                            "name": "trigger_spacebar",
+                                            "value": 0
+                                        }
+                                    }
+                                ]
                             }
                         ]
                     },

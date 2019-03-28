@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`generateLayerTriggers works 1`] = `
+Object {
+  "description": "Layer triggers",
+  "manipulators": Array [
+    Object {
+      "from": Object {
+        "key_code": "a",
+        "modifiers": Object {
+          "optional": Array [
+            "any",
+          ],
+        },
+      },
+      "to": Array [
+        Object {
+          "set_variable": Object {
+            "name": "trigger_a",
+            "value": 1,
+          },
+        },
+      ],
+      "to_after_key_up": Array [
+        Object {
+          "set_variable": Object {
+            "name": "trigger_a",
+            "value": 0,
+          },
+        },
+      ],
+      "type": "basic",
+    },
+    Object {
+      "from": Object {
+        "key_code": "b",
+        "modifiers": Object {
+          "optional": Array [
+            "any",
+          ],
+        },
+      },
+      "to": Array [
+        Object {
+          "set_variable": Object {
+            "name": "trigger_b",
+            "value": 1,
+          },
+        },
+      ],
+      "to_after_key_up": Array [
+        Object {
+          "set_variable": Object {
+            "name": "trigger_b",
+            "value": 0,
+          },
+        },
+      ],
+      "type": "basic",
+    },
+  ],
+}
+`;

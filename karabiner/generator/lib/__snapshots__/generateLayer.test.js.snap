@@ -1,0 +1,123 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`generateLayer works 1`] = `
+Object {
+  "description": "description",
+  "manipulators": Array [
+    Object {
+      "conditions": Array [
+        Object {
+          "name": "trigger_x",
+          "type": "variable_if",
+          "value": 1,
+        },
+        Object {
+          "name": "trigger_y",
+          "type": "variable_if",
+          "value": 1,
+        },
+      ],
+      "from": Object {
+        "key_code": "a",
+        "modifiers": Object {
+          "mandatory": Array [],
+          "optional": Array [
+            "any",
+          ],
+        },
+      },
+      "to": Array [
+        Object {
+          "key_code": "b",
+        },
+      ],
+      "type": "basic",
+    },
+    Object {
+      "conditions": Array [
+        Object {
+          "name": "trigger_x",
+          "type": "variable_if",
+          "value": 1,
+        },
+        Object {
+          "name": "trigger_y",
+          "type": "variable_if",
+          "value": 1,
+        },
+      ],
+      "from": Object {
+        "key_code": "c",
+        "modifiers": Object {
+          "mandatory": Array [],
+          "optional": Array [
+            "any",
+          ],
+        },
+      },
+      "to": Array [
+        Object {
+          "key_code": "d",
+        },
+      ],
+      "type": "basic",
+    },
+  ],
+}
+`;
+
+exports[`generateLayer works 2`] = `
+Object {
+  "description": "description2",
+  "manipulators": Array [
+    Object {
+      "conditions": Array [
+        Object {
+          "name": "trigger_x",
+          "type": "variable_if",
+          "value": 1,
+        },
+      ],
+      "from": Object {
+        "key_code": "a",
+        "modifiers": Object {
+          "mandatory": Array [],
+          "optional": Array [
+            "any",
+          ],
+        },
+      },
+      "to": Array [
+        Object {
+          "key_code": "b",
+        },
+      ],
+      "type": "basic",
+    },
+    Object {
+      "conditions": Array [
+        Object {
+          "name": "trigger_x",
+          "type": "variable_if",
+          "value": 1,
+        },
+      ],
+      "from": Object {
+        "key_code": "c",
+        "modifiers": Object {
+          "mandatory": Array [],
+          "optional": Array [
+            "any",
+          ],
+        },
+      },
+      "to": Array [
+        Object {
+          "key_code": "d",
+        },
+      ],
+      "type": "basic",
+    },
+  ],
+}
+`;
