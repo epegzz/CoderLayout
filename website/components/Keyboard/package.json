@@ -1,6 +1,0 @@
-{
-  "name": "Keyboard",
-  "version": "0.0.0",
-  "private": true,
-  "main": "./Keyboard.js"
-}
