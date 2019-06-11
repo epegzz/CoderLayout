@@ -1,6 +1,7 @@
-import React from 'react';
+import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import Key from './Key';
+import Key from './Key'
 
 const Wrapper = styled.div`
   position: relative;
@@ -32,7 +33,6 @@ const Wrapper = styled.div`
   
   ul {list-style-type: none; width: 784px; margin: 0 auto; padding-inline-start: 0;}
   li {float: left;}
-    
 `
 
 const Row = styled.div`
@@ -51,110 +51,230 @@ const UpDownKeysWrapper = styled.div`
   float: left;
 `
 
+// Handy list of key codes for the German Apple keyboard can be found at
+// http://iks.cs.ovgu.de/~elkner/keyboard/mac/scancodes_MBP.html#fn1
+
+// A list of Keyboard Unicode characters can be found at
+// https://gist.github.com/Zenexer/c5243c4216f1f8cd2251
+
+const defaultKeys = [
+  // fn row
+  { type: 'fn', code: 41, name: 'escape', label: 'esc' },
+  { type: 'fn', code: 58, name: 'f1', label: 'f1' },
+  { type: 'fn', code: 59, name: 'f2', label: 'f2' },
+  { type: 'fn', code: 60, name: 'f3', label: 'f3' },
+  { type: 'fn', code: 61, name: 'f4', label: 'f4' },
+  { type: 'fn', code: 62, name: 'f5', label: 'f5' },
+  { type: 'fn', code: 63, name: 'f6', label: 'f6' },
+  { type: 'fn', code: 64, name: 'f7', label: 'f7' },
+  { type: 'fn', code: 65, name: 'f8', label: 'f8' },
+  { type: 'fn', code: 66, name: 'f9', label: 'f9' },
+  { type: 'fn', code: 67, name: 'f10', label: 'f10' },
+  { type: 'fn', code: 68, name: 'f11', label: 'f11' },
+  { type: 'fn', code: 69, name: 'f12', label: 'f12' },
+  { type: 'fn', code: 0, name: 'eject', label: '⏏' },
+  
+  // numbers row
+  { type: 'default', code: 100, name: 'non_us_backslash', label: '^' },
+  { type: 'default', code: 30, name: '1', label: '1' },
+  { type: 'default', code: 31, name: '2', label: '2' },
+  { type: 'default', code: 32, name: '3', label: '3' },
+  { type: 'default', code: 33, name: '4', label: '4' },
+  { type: 'default', code: 34, name: '5', label: '5' },
+  { type: 'default', code: 35, name: '6', label: '6' },
+  { type: 'default', code: 36, name: '7', label: '7' },
+  { type: 'default', code: 37, name: '8', label: '8' },
+  { type: 'default', code: 38, name: '9', label: '9' },
+  { type: 'default', code: 39, name: '0', label: '0' },
+  { type: 'default', code: 45, name: 'hyphen', label: 'ß' },
+  { type: 'default', code: 46, name: 'equal_sign', label: '´' },
+  { type: 'delete', code: 42, name: 'delete_or_backspace', label: '⌫' },
+  
+  // Row 1
+  { type: 'tab', code: 43, name: 'tab', label: '⇥' },
+  { type: 'default', code: 20, name: 'q', label: 'Q' },
+  { type: 'default', code: 26, name: 'w', label: 'W' },
+  { type: 'default', code: 8, name: 'e', label: 'E' },
+  { type: 'default', code: 21, name: 'r', label: 'R' },
+  { type: 'default', code: 23, name: 't', label: 'T' },
+  { type: 'default', code: 28, name: 'z', label: 'Z' },
+  { type: 'default', code: 24, name: 'u', label: 'U' },
+  { type: 'default', code: 12, name: 'i', label: 'I' },
+  { type: 'default', code: 18, name: 'o', label: 'O' },
+  { type: 'default', code: 19, name: 'p', label: 'P' },
+  { type: 'default', code: 47, name: 'open_bracket', label: 'Ü' },
+  { type: 'default', code: 48, name: 'close_bracket', label: '+' },
+  { type: 'germanReturn', code: 40, name: 'return_or_enter', label: '⏎' },
+  
+  // Row 2
+  { type: 'caps', code: 57, name: 'caps_lock', label: '⇪' },
+  { type: 'default', code: 4, name: 'a', label: 'A' },
+  { type: 'default', code: 22, name: 's', label: 'S' },
+  { type: 'default', code: 7, name: 'd', label: 'D' },
+  { type: 'default', code: 9, name: 'f', label: 'F' },
+  { type: 'default', code: 10, name: 'g', label: 'G' },
+  { type: 'default', code: 11, name: 'h', label: 'H' },
+  { type: 'default', code: 13, name: 'j', label: 'J' },
+  { type: 'default', code: 14, name: 'k', label: 'K' },
+  { type: 'default', code: 15, name: 'l', label: 'L' },
+  { type: 'default', code: 51, name: 'semicolon', label: 'Ö' },
+  { type: 'default', code: 52, name: 'quote', label: 'Ä' },
+  { type: 'default', code: 50, name: 'backslash', label: '#' },
+  
+  // Row 3
+  { type: 'shortShift', code: 225, name: 'left_shift', label: '⇧' },
+  { type: 'default', code: 53, name: 'grave_accent_and_tilde', label: '>' },
+  { type: 'default', code: 29, name: 'z', label: 'Y' },
+  { type: 'default', code: 27, name: 'x', label: 'X' },
+  { type: 'default', code: 6, name: 'c', label: 'C' },
+  { type: 'default', code: 25, name: 'v', label: 'V' },
+  { type: 'default', code: 5, name: 'b', label: 'B' },
+  { type: 'default', code: 17, name: 'n', label: 'N' },
+  { type: 'default', code: 16, name: 'm', label: 'M' },
+  { type: 'default', code: 54, name: 'comma', label: ',' },
+  { type: 'default', code: 55, name: 'period', label: '.' },
+  { type: 'default', code: 56, name: 'slash', label: '-' },
+  { type: 'longShift', code: 229, name: 'right_shift', label: '⇧' },
+  
+  // Row 4
+  { type: 'fnLeft', code: undefined, name: 'fn', label: 'fn' }, // not sure what the key code is
+  { type: 'ctrlLeft', code: 224, name: 'left_control', label: '⌃' },
+  { type: 'optLeft', code: 226, name: 'left_option', label: '⌥' },
+  { type: 'cmdLeft', code: 227, name: 'left_command', label: '⌘' },
+  { type: 'space', code: 44, name: 'spacebar', label: 'space' },
+  { type: 'cmdRight', code: 231, name: 'right_command', label: '⌘' },
+  { type: 'optRight', code: 230, name: 'right_option', label: '⌥' },
+  { type: 'left', code: 80, name: 'left_arrow', label: '◄' },
+  { type: 'up', code: 82, name: 'up_arrow', label: '▲' },
+  { type: 'down', code: 81, name: 'down_arrow', label: '▼' },
+  { type: 'right', code: 79, name: 'right_arrow', label: '►' },
+]
+
 class Keyboard extends React.Component {
   render() {
+    let { keys = [] } = this.props
+
+    keys = defaultKeys.map((defaults, index) => ({
+      ...defaults,
+      ...(keys[index] || {}),
+    }))
+
     return (
       <Wrapper>
+        {/* fn row */}
         <Row>
-          <Key type={'fn'} label="" />
-          <Key type={'fn'} label="" />
-          <Key type={'fn'} label="" />
-          <Key type={'fn'} label="" />
-          <Key type={'fn'} label="" />
-          <Key type={'fn'} label="" />
-          <Key type={'fn'} label="" />
-          <Key type={'fn'} label="" />
-          <Key type={'fn'} label="" />
-          <Key type={'fn'} label="" />
-          <Key type={'fn'} label="" />
-          <Key type={'fn'} label="" />
-          <Key type={'fn'} label="" />
-          <Key type={'fn'} label="" />
+          <Key {...keys[0]} />
+          <Key {...keys[1]} />
+          <Key {...keys[2]} />
+          <Key {...keys[3]} />
+          <Key {...keys[4]} />
+          <Key {...keys[5]} />
+          <Key {...keys[6]} />
+          <Key {...keys[7]} />
+          <Key {...keys[8]} />
+          <Key {...keys[9]} />
+          <Key {...keys[10]} />
+          <Key {...keys[11]} />
+          <Key {...keys[12]} />
+          <Key {...keys[13]} />
         </Row>
 
+        {/* numbers row */}
         <Row>
-          <Key label="" />
-          <Key label="" />
-          <Key label="" />
-          <Key label="" />
-          <Key label="" />
-          <Key label="" />
-          <Key label="" />
-          <Key label="" />
-          <Key label="" />
-          <Key label="" />
-          <Key label="" />
-          <Key label="" />
-          <Key label="" />
-          <Key type={'delete'} label="" />
+          <Key {...keys[14]} />
+          <Key {...keys[15]} />
+          <Key {...keys[16]} />
+          <Key {...keys[17]} />
+          <Key {...keys[18]} />
+          <Key {...keys[19]} />
+          <Key {...keys[20]} />
+          <Key {...keys[21]} />
+          <Key {...keys[22]} />
+          <Key {...keys[23]} />
+          <Key {...keys[24]} />
+          <Key {...keys[25]} />
+          <Key {...keys[26]} />
+          <Key {...keys[27]} />
         </Row>
+
+        {/* row 1 */}
         <Row>
-          <Key type={'tab'} label="" />
-          <Key label="" />
-          <Key label="" />
-          <Key label="" />
-          <Key label="" />
-          <Key label="" />
-          <Key label="" />
-          <Key label="" />
-          <Key label="" />
-          <Key label="" />
-          <Key label="" />
-          <Key label="" />
-          <Key label="" />
-          <Key type="germanReturn" label="" />
+          <Key {...keys[28]} />
+          <Key {...keys[29]} />
+          <Key {...keys[30]} />
+          <Key {...keys[31]} />
+          <Key {...keys[32]} />
+          <Key {...keys[33]} />
+          <Key {...keys[34]} />
+          <Key {...keys[35]} />
+          <Key {...keys[36]} />
+          <Key {...keys[37]} />
+          <Key {...keys[38]} />
+          <Key {...keys[39]} />
+          <Key {...keys[40]} />
+          <Key {...keys[41]} />
         </Row>
+
+        {/* row 2 */}
         <Row>
-          <Key type={'caps'} label="" />
-          <Key label="" />
-          <Key label="" />
-          <Key label="" />
-          <Key label="" />
-          <Key label="" />
-          <Key label="" />
-          <Key label="" />
-          <Key label="" />
-          <Key label="" />
-          <Key label="" />
-          <Key label="" />
-          <Key label="" />
+          <Key {...keys[42]} />
+          <Key {...keys[43]} />
+          <Key {...keys[44]} />
+          <Key {...keys[45]} />
+          <Key {...keys[46]} />
+          <Key {...keys[47]} />
+          <Key {...keys[48]} />
+          <Key {...keys[49]} />
+          <Key {...keys[50]} />
+          <Key {...keys[51]} />
+          <Key {...keys[52]} />
+          <Key {...keys[53]} />
+          <Key {...keys[54]} />
         </Row>
+
+        {/* row 3 */}
         <Row>
-          <Key type={'shortShift'} label="" />
-          <Key label="" />
-          <Key label="" />
-          <Key label="" />
-          <Key label="" />
-          <Key label="" />
-          <Key label="" />
-          <Key label="" />
-          <Key label="" />
-          <Key label="" />
-          <Key label="" />
-          <Key label="" />
-          <Key type={'longShift'}  label="" />
+          <Key {...keys[55]} />
+          <Key {...keys[56]} />
+          <Key {...keys[57]} />
+          <Key {...keys[58]} />
+          <Key {...keys[59]} />
+          <Key {...keys[60]} />
+          <Key {...keys[61]} />
+          <Key {...keys[62]} />
+          <Key {...keys[63]} />
+          <Key {...keys[64]} />
+          <Key {...keys[65]} />
+          <Key {...keys[66]} />
+          <Key {...keys[67]} />
         </Row>
+
+        {/* row 4 */}
         <Row>
-          <Key type={'fnLeft'} label="" />
-          <Key type={'ctrlLeft'} label="" />
-          <Key type={'optLeft'} label="" />
-          <Key type={'cmdLeft'} label="" />
-          <Key type={'space'} label="" />
-          <Key type={'cmdRight'} label="" />
-          <Key type={'optRight'} label="" />
+          <Key {...keys[68]} />
+          <Key {...keys[69]} />
+          <Key {...keys[70]} />
+          <Key {...keys[71]} />
+          <Key {...keys[72]} />
+          <Key {...keys[73]} />
+          <Key {...keys[74]} />
 
           <ArrowKeysWrapper>
-            <Key type={'left'} label="" />
+            <Key {...keys[75]} />
             <UpDownKeysWrapper>
-              <Key type={'up'} label="" />
-              <Key type={'down'} label="" />
+              <Key {...keys[76]} />
+              <Key {...keys[77]} />
             </UpDownKeysWrapper>
-            <Key type={'right'} label="" />
+            <Key {...keys[78]} />
           </ArrowKeysWrapper>
         </Row>
       </Wrapper>
-    );
+    )
   }
 }
 
-export default Keyboard;
+Keyboard.propTypes = {
+  keys: PropTypes.arrayOf(Key.propTypes)
+}
+
+export default Keyboard

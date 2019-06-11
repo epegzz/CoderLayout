@@ -1,2 +1,3 @@
 # CoderLayout
-A power user keyboard layout
+
+A keyboard layout that sucks less

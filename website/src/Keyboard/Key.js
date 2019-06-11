@@ -3,11 +3,13 @@ import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 
 const keyStyles = css`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
   position: relative;
   float: left;
   box-sizing: border-box;
-  display: block;
   color: #5a5a5ab0;
   font: bold 9pt arial;
   text-decoration: none;
@@ -130,8 +132,10 @@ const Wrapper = styled.a`
       width: 4px;
       height: 4px;
       border-radius: 10px;
-      margin: 8px 0 0 9px;
       box-shadow: inset 0 1px 0 #666;    
+      position: absolute;
+      left: 9px;
+      top: 8px;
     }
   `};  
 `
