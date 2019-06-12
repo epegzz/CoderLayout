@@ -57,7 +57,7 @@ const UpDownKeysWrapper = styled.div`
 // A list of Keyboard Unicode characters can be found at
 // https://gist.github.com/Zenexer/c5243c4216f1f8cd2251
 
-const formatQwertyLabel = (label) => {
+const formatQwertyLabel = ({ label }) => {
   if (Array.isArray(label) && label.length > 1) {
     return (
       <span>
@@ -88,65 +88,65 @@ const defaultKeys = [
   { type: 'fn', code: 0, name: 'eject', label: '⏏' },
   
   // numbers row
-  { type: 'default', code: 100, name: 'non_us_backslash', label: ['^', '°', '„'] },
-  { type: 'default', code: 30, name: '1', label: ['1', '!', '¡'] },
-  { type: 'default', code: 31, name: '2', label: ['2', '"', '“'] },
-  { type: 'default', code: 32, name: '3', label: ['3', '§', '¶'] },
-  { type: 'default', code: 33, name: '4', label: ['4', '$', '¢'] },
-  { type: 'default', code: 34, name: '5', label: ['5', '%', '['] },
-  { type: 'default', code: 35, name: '6', label: ['6', '&', ']'] },
-  { type: 'default', code: 36, name: '7', label: ['7', '/', '|'] },
-  { type: 'default', code: 37, name: '8', label: ['8', '(', '{'] },
-  { type: 'default', code: 38, name: '9', label: ['9', ')', '}'] },
-  { type: 'default', code: 39, name: '0', label: ['0', '=', '≠'] },
-  { type: 'default', code: 45, name: 'hyphen', label: ['ß', '?', '¿'] },
-  { type: 'default', code: 46, name: 'equal_sign', label: ['´', '`', '\''] },
-  { type: 'delete', code: 42, name: 'delete_or_backspace', label: '⌫' },
+  { type: 'default', code: 100, name: 'non_us_backslash', label: ['^', '°', '„', undefined, '“'] },
+  { type: 'default', code: 30, name: '1', label: ['1', '!', '¡', undefined, '¬'] },
+  { type: 'default', code: 31, name: '2', label: ['2', '"', '“', undefined, '”'] },
+  { type: 'default', code: 32, name: '3', label: ['3', '§', '¶', undefined, '#'] },
+  { type: 'default', code: 33, name: '4', label: ['4', '$', '¢', undefined, '£'] },
+  { type: 'default', code: 34, name: '5', label: ['5', '%', '[', undefined, 'ﬁ'] },
+  { type: 'default', code: 35, name: '6', label: ['6', '&', ']', undefined, '^'] },
+  { type: 'default', code: 36, name: '7', label: ['7', '/', '|', undefined, '\\'] },
+  { type: 'default', code: 37, name: '8', label: ['8', '(', '{', undefined, '˜'] },
+  { type: 'default', code: 38, name: '9', label: ['9', ')', '}', undefined, '·'] },
+  { type: 'default', code: 39, name: '0', label: ['0', '=', '≠', undefined, '¯'] },
+  { type: 'default', code: 45, name: 'hyphen', label: ['ß', '?', '¿', undefined, '˙'] },
+  { type: 'default', code: 46, name: 'equal_sign', label: ['´', '`', '\'', undefined, '˚'] },
+  { type: 'delete', code: 42, name: 'delete_or_backspace', label: ['⌫', undefined, undefined, '⌦'] },
   
   // Row 1
   { type: 'tab', code: 43, name: 'tab', label: '⇥' },
-  { type: 'default', code: 20, name: 'q', label: ['Q', undefined, '«'] },
-  { type: 'default', code: 26, name: 'w', label: ['W', undefined, '∑'] },
-  { type: 'default', code: 8, name: 'e', label: ['E', undefined, '€'] },
-  { type: 'default', code: 21, name: 'r', label: ['R', undefined, '®'] },
-  { type: 'default', code: 23, name: 't', label: ['T', undefined, '†'] },
-  { type: 'default', code: 28, name: 'z', label: ['Z', undefined, 'Ω'] },
-  { type: 'default', code: 24, name: 'u', label: ['U', undefined, '¨'] },
-  { type: 'default', code: 12, name: 'i', label: ['I', undefined, '⁄'] },
-  { type: 'default', code: 18, name: 'o', label: ['O', undefined, 'ø'] },
-  { type: 'default', code: 19, name: 'p', label: ['P', undefined, 'π'] },
-  { type: 'default', code: 47, name: 'open_bracket', label: ['Ü', undefined, '•'] },
-  { type: 'default', code: 48, name: 'close_bracket', label: ['+', '*', '±'] },
+  { type: 'default', code: 20, name: 'q', label: ['Q', undefined, '«', undefined, '»'] },
+  { type: 'default', code: 26, name: 'w', label: ['W', undefined, '∑', undefined, '„'] },
+  { type: 'default', code: 8, name: 'e', label: ['E', undefined, '€', undefined, '‰'] },
+  { type: 'default', code: 21, name: 'r', label: ['R', undefined, '®', undefined, '¸'] },
+  { type: 'default', code: 23, name: 't', label: ['T', undefined, '†', undefined, '˝'] },
+  { type: 'default', code: 28, name: 'z', label: ['Z', undefined, 'Ω', undefined, 'ˇ'] },
+  { type: 'default', code: 24, name: 'u', label: ['U', undefined, '¨', undefined, 'Á'] },
+  { type: 'default', code: 12, name: 'i', label: ['I', undefined, '⁄', undefined, 'Û'] },
+  { type: 'default', code: 18, name: 'o', label: ['O', undefined, 'ø', undefined, 'Ø'] },
+  { type: 'default', code: 19, name: 'p', label: ['P', undefined, 'π', undefined, '∏'] },
+  { type: 'default', code: 47, name: 'open_bracket', label: ['Ü', undefined, '•', undefined, '°'] },
+  { type: 'default', code: 48, name: 'close_bracket', label: ['+', '*', '±', undefined, ''] },
   { type: 'germanReturn', code: 40, name: 'return_or_enter', label: '⏎' },
   
   // Row 2
   { type: 'caps', code: 57, name: 'caps_lock', label: '⇪' },
-  { type: 'default', code: 4, name: 'a', label: ['A', undefined, 'å'] },
-  { type: 'default', code: 22, name: 's', label: ['S', undefined, '‚'] },
-  { type: 'default', code: 7, name: 'd', label: ['D', undefined, '∂'] },
-  { type: 'default', code: 9, name: 'f', label: ['F', undefined, 'ƒ'] },
-  { type: 'default', code: 10, name: 'g', label: ['G', undefined, '©'] },
-  { type: 'default', code: 11, name: 'h', label: ['H', undefined, 'ª'] },
-  { type: 'default', code: 13, name: 'j', label: ['J', undefined, 'º'] },
-  { type: 'default', code: 14, name: 'k', label: ['K', undefined, 'Δ'] },
-  { type: 'default', code: 15, name: 'l', label: ['L', undefined, '@'] },
-  { type: 'default', code: 51, name: 'semicolon', label: ['Ö', undefined, 'œ'] },
-  { type: 'default', code: 52, name: 'quote', label: ['Ä', undefined, 'æ'] },
-  { type: 'default', code: 50, name: 'backslash', label: ['#', '\'', '‘'] },
+  { type: 'default', code: 4, name: 'a', label: ['A', undefined, 'å', undefined, 'Å'] },
+  { type: 'default', code: 22, name: 's', label: ['S', undefined, '‚', undefined, 'Í'] },
+  { type: 'default', code: 7, name: 'd', label: ['D', undefined, '∂', undefined, '™'] },
+  { type: 'default', code: 9, name: 'f', label: ['F', undefined, 'ƒ', undefined, 'Ï'] },
+  { type: 'default', code: 10, name: 'g', label: ['G', undefined, '©', undefined, 'Ì'] },
+  { type: 'default', code: 11, name: 'h', label: ['H', undefined, 'ª', undefined, 'Ó'] },
+  { type: 'default', code: 13, name: 'j', label: ['J', undefined, 'º', undefined, 'ı'] },
+  { type: 'default', code: 14, name: 'k', label: ['K', undefined, 'Δ', undefined, 'ˆ'] },
+  { type: 'default', code: 15, name: 'l', label: ['L', undefined, '@', undefined, 'ﬂ'] },
+  { type: 'default', code: 51, name: 'semicolon', label: ['Ö', undefined, 'œ', undefined, 'Œ'] },
+  { type: 'default', code: 52, name: 'quote', label: ['Ä', undefined, 'æ', undefined, 'Æ'] },
+  { type: 'default', code: 50, name: 'backslash', label: ['#', '\'', '‘', undefined, '’'] },
   
   // Row 3
   { type: 'shortShift', code: 225, name: 'left_shift', label: '⇧' },
-  { type: 'default', code: 53, name: 'grave_accent_and_tilde', label: ['<', '>', '≤'] },
-  { type: 'default', code: 29, name: 'z', label: ['Y', undefined, '¥'] },
-  { type: 'default', code: 27, name: 'x', label: ['X', undefined, '≈'] },
-  { type: 'default', code: 6, name: 'c', label: ['C', undefined, 'ç'] },
-  { type: 'default', code: 25, name: 'v', label: ['V', undefined, '√'] },
-  { type: 'default', code: 5, name: 'b', label: ['B', undefined, '∫'] },
-  { type: 'default', code: 17, name: 'n', label: ['N', undefined, '~'] },
-  { type: 'default', code: 16, name: 'm', label: ['M', undefined, 'µ'] },
-  { type: 'default', code: 54, name: 'comma', label: [',', ';', '∞'] },
-  { type: 'default', code: 55, name: 'period', label: ['.', ':', '…'] },
-  { type: 'default', code: 56, name: 'slash', label: ['-', '_', '–'] },
+  { type: 'default', code: 53, name: 'grave_accent_and_tilde', label: ['<', '>', '≤', undefined, '≥'] },
+  { type: 'default', code: 29, name: 'z', label: ['Y', undefined, '¥', undefined, '‡'] },
+  { type: 'default', code: 27, name: 'x', label: ['X', undefined, '≈', undefined, 'Ù'] },
+  { type: 'default', code: 6, name: 'c', label: ['C', undefined, 'ç', undefined, 'Ç'] },
+  { type: 'default', code: 25, name: 'v', label: ['V', undefined, '√', undefined, '◊'] },
+  { type: 'default', code: 5, name: 'b', label: ['B', undefined, '∫', undefined, '‹'] },
+  { type: 'default', code: 17, name: 'n', label: ['N', undefined, '~', undefined, '›'] },
+  { type: 'default', code: 16, name: 'm', label: ['M', undefined, 'µ', undefined, '˘'] },
+  { type: 'default', code: 54, name: 'comma', label: [',', ';', '∞', undefined, '˛'] },
+  { type: 'default', code: 55, name: 'period', label: ['.', ':', '…', undefined, '÷'] },
+  { type: 'default', code: 56, name: 'slash', label: ['-', '_', '–', undefined, '—'] },
   { type: 'longShift', code: 229, name: 'right_shift', label: '⇧' },
   
   // Row 4
@@ -157,15 +157,15 @@ const defaultKeys = [
   { type: 'space', code: 44, name: 'spacebar', label: 'space' },
   { type: 'cmdRight', code: 231, name: 'right_command', label: '⌘' },
   { type: 'optRight', code: 230, name: 'right_option', label: '⌥' },
-  { type: 'left', code: 80, name: 'left_arrow', label: '◄' },
-  { type: 'up', code: 82, name: 'up_arrow', label: '▲' },
-  { type: 'down', code: 81, name: 'down_arrow', label: '▼' },
-  { type: 'right', code: 79, name: 'right_arrow', label: '►' },
+  { type: 'left', code: 80, name: 'left_arrow', label: ['←', undefined, undefined, '⇤'] },
+  { type: 'up', code: 82, name: 'up_arrow', label: ['↑', undefined, undefined, '⇞'] },
+  { type: 'down', code: 81, name: 'down_arrow', label: ['↓', undefined, undefined, '⇟'] },
+  { type: 'right', code: 79, name: 'right_arrow', label: ['→', undefined, undefined, '⇥'] },
 ]
 
 class Keyboard extends React.Component {
   render() {
-    const { formatLabel = formatQwertyLabel } = this.props
+    const { disableKeysWithoutLabels, formatLabel = formatQwertyLabel } = this.props
     let { keys = [] } = this.props
 
     keys = defaultKeys.map((defaults, index) => {
@@ -184,7 +184,20 @@ class Keyboard extends React.Component {
     })
 
     for (const key of keys) {
-      key.label = formatLabel(key.label)
+      key.label = formatLabel(key)
+      if (disableKeysWithoutLabels) {
+        console.log(typeof key.label, Array.isArray(key.label), key.label)
+        if (
+          !key.label ||
+          (Array.isArray(key.label) && key.label.length === 0) ||
+          (typeof key.label === 'string' && key.label.length === 0)
+          //(!Array.isArray(key.label)typeof key.label !== 'object'
+        ) {
+          key.disabled = true
+          key.mod = undefined
+        }
+
+      }
     }
 
     return (
@@ -303,7 +316,8 @@ class Keyboard extends React.Component {
 
 Keyboard.propTypes = {
   keys: PropTypes.arrayOf(Key.propTypes),
-  formatLabel: PropTypes.func
+  formatLabel: PropTypes.func,
+  disableKeysWithoutLabels: PropTypes.bool
 }
 
 export default Keyboard

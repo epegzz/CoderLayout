@@ -25,7 +25,7 @@ const coderLayoutKeys = [
   { label: '⌃' },
   { label: '⌘' },
   { label: '⌥' },
-  { label: 'WS' },
+  { label: '❏' },
   { label: '', disabled: true },
   { label: '', disabled: true },
   { label: '', disabled: true },
@@ -45,7 +45,7 @@ const coderLayoutKeys = [
   { label: ['X', undefined, '^', undefined] },
   { label: ['P', undefined, '!', undefined] },
   { label: ['H', '⌫', '<', '7'] },
-  { label: ['L', '↑', '>', '8',undefined] },
+  { label: ['L', '↑', '>', '8', '⇞'] },
   { label: ['M', '⌦', '=', '9', undefined] },
   { label: ['W', undefined, '&', undefined, undefined] },
   { label: ['Q', undefined, '@', undefined, undefined] },
@@ -59,11 +59,11 @@ const coderLayoutKeys = [
   { label: ['I', undefined, '{', undefined, undefined] },
   { label: ['E', undefined, '}', undefined, '⌘V'] },
   { label: ['O', undefined, '*', undefined, undefined] },
-  { label: ['B', '↖', '?', undefined, undefined] },
-  { label: ['N', '←', '(', '4', undefined] },
-  { label: ['R', '↓', ')', '5', undefined] },
-  { label: ['S', '→', '-', '6', undefined] },
-  { label: ['G', '↘', ':', undefined, undefined] },
+  { label: ['B', '⇤', '?', undefined, undefined] },
+  { label: ['N', '←', '(', '4', '⇠'] },
+  { label: ['R', '↓', ')', '5', '⇟'] },
+  { label: ['S', '→', '-', '6', '⇢'] },
+  { label: ['G', '⇥', ':', undefined, undefined] },
   { label: 'M2', mod: 2 },
   { label: '', disabled: true },
 
@@ -95,7 +95,6 @@ const coderLayoutKeys = [
   { label: '', disabled: true },
   { label: '', disabled: true },
 ]
-
 
 const qwertyKeys = [
   // fn row
@@ -177,7 +176,7 @@ const qwertyKeys = [
   { mod: 1 },
 
   // Row 4
-  { label: '', disabled: true },
+  { mod: 3 },
   { },
   { mod: 2 },
   { },
@@ -189,6 +188,11 @@ const qwertyKeys = [
   { },
   { },
 ]
+
+const codingCharacters = coderLayoutKeys.reduce((result, key) => ([
+  ...result,
+  key.label[2]
+]), []).filter(o => o && o.length)
 
 const ModLabel = styled.div`
   position: absolute;
@@ -216,7 +220,7 @@ const Mod4Label = styled(ModLabel)`
   right: 0;
 `
 
-const formatLabel = (label) => {
+const formatLabel = ({ label }) => {
   if (!Array.isArray(label)) label = [label]
   return (
     <div>
@@ -229,27 +233,121 @@ const formatLabel = (label) => {
   )
 }
 
+const Label1Of2 = styled.div`
+  position: absolute;
+  margin: 4px 6px;
+  top: 2px;
+  left: 4px;
+`
+const Label2Of2 = styled.div`
+  position: absolute;
+  margin: 4px 6px;
+  bottom: 4px;
+  right: 4px;
+`
+
+const Label1Of3 = styled.div`
+  position: absolute;
+  margin: 4px 6px;
+  top: 2px;
+  left: 4px;
+`
+const Label2Of3 = styled.div`
+  position: absolute;
+  margin: 4px 6px;
+  bottom: 4px;
+  left: 4px;
+`
+const Label3Of3 = styled.div`
+  position: absolute;
+  margin: 4px 6px;
+  bottom: 4px;
+  right: 4px;
+`
+
+const formatLabelForCodingLayer = (mods) => ({ label, mod }) => {
+  if (mods.includes(mod)) return label
+  if (!Array.isArray(label)) label = [label]
+  const codingCharacterLabels = label.reduce((result, labelForLayer) => [...result, codingCharacters.includes(labelForLayer) && labelForLayer], []).filter(o => !!o)
+  if (codingCharacterLabels.length === 0) return
+  if (codingCharacterLabels.length === 1) return codingCharacterLabels[0]
+  if (codingCharacterLabels.length === 2) return (
+    <div>
+      <Label1Of2>{codingCharacterLabels[0]}</Label1Of2>
+      <Label2Of2>{codingCharacterLabels[1]}</Label2Of2>
+    </div>
+  )
+  return (
+    <div>
+      <Label1Of3>{codingCharacterLabels[0]}</Label1Of3>
+      <Label2Of3>{codingCharacterLabels[1]}</Label2Of3>
+      <Label3Of3>{codingCharacterLabels[2]}</Label3Of3>
+    </div>
+  )
+}
+
+const sectionBackgroundColors = {
+  header: '#282c34',
+  typing: '#28342f',
+}
+const sectionTextColors = {
+  header: 'white',
+  typing: 'white'
+}
+
+const Section = styled.div`
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color:  ${({ theme }) => sectionBackgroundColors[theme] };
+  color: ${({ theme }) => sectionTextColors[theme] };
+
+  h1 {
+    font-weight: normal;
+    font-size: calc(10px + 2vmin);
+  }
+`
+
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <p>
+        <Section theme={'header'}>
+          <h1>
             CoderLayout
-          </p>
+          </h1>
           <Keyboard
             formatLabel={formatLabel}
             keys={coderLayoutKeys}
           />
-
-          <p>
+          <h1>
             QWERTZ
-          </p>
+          </h1>
           <Keyboard
             formatLabel={formatLabel}
             keys={qwertyKeys}
           />
-        </header>
+        </Section>
+        <Section theme={'typing'}>
+          <h1>
+            CoderLayout
+          </h1>
+          <Keyboard
+            formatLabel={formatLabelForCodingLayer([2])}
+            keys={coderLayoutKeys}
+            disableKeysWithoutLabels
+          />
+          <h1>
+            QWERTZ
+          </h1>
+          <Keyboard
+            formatLabel={formatLabelForCodingLayer([1, 2])}
+            keys={qwertyKeys}
+            disableKeysWithoutLabels
+          />
+        </Section>
       </div>
     );
   }
