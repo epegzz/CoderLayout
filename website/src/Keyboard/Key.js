@@ -21,10 +21,10 @@ const keyStyles = css`
   border-radius: 4px;
   border-top: 2px solid #ffffff;
   box-shadow:
-          0 1px 0 #c9c9c9,
-          0 1px 3px rgba(0, 0, 0, 0.59),
-          0 0 1px rgba(0, 0, 0, 0.79),
-          0 1px 2px rgba(0, 0, 0, 0.79);
+    0 1px 0 #c9c9c9,
+    0 1px 3px rgba(0, 0, 0, 0.59),
+    0 0 1px rgba(0, 0, 0, 0.79),
+    0 1px 2px rgba(0, 0, 0, 0.79);
 `
 
 const activeKeyStyles = css`
@@ -138,6 +138,69 @@ const Wrapper = styled.a`
       top: 8px;
     }
   `};  
+  
+  ${({ disabled }) => disabled && css`
+    opacity: 0.2;
+  `};
+`
+
+const ModIndicator = styled.div`
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  border-radius: 4px;
+  overflow: hidden;
+  
+  :after {
+    content: '';
+    width: 30px;
+    height: 30px;
+    background: black;
+    position: absolute;
+    transform: rotate(45deg);
+    opacity: 0.25;
+    border-radius: 2px;
+  }
+
+  ${({ mod }) => mod === 4 && css`
+    top: -2px;
+    right: 0;
+    
+    :after {
+      top: -15px;
+      right: -15px;
+    }
+  `};
+  
+  ${({ mod }) => mod === 3 && css`
+    bottom: -1px;
+    left: 0;
+    
+    :after {
+      bottom: -15px;
+      left: -15px;
+    }
+  `};
+
+  ${({ mod }) => mod === 1 && css`
+    top: -2px;
+    left: 0;
+    
+    :after {
+      top: -15px;
+      left: -15px;
+    }
+  `};
+
+  ${({ mod }) => mod === 2 && css`
+    bottom: -1px;
+    right: 0;
+    
+    :after {
+      bottom: -15px;
+      right: -15px;
+    }
+  `};
 `
 
 const Label = styled.span`
@@ -147,9 +210,10 @@ const Label = styled.span`
 class Key extends React.Component {
 
   render() {
-    const { label, type = 'default' } = this.props;
+    const { mod, label, disabled, type = 'default' } = this.props;
     return (
-      <Wrapper type={type}>
+      <Wrapper disabled={disabled} type={type}>
+        {mod && <ModIndicator mod={mod} />}
         <Label>
           {label}
         </Label>
@@ -181,6 +245,8 @@ Key.propTypes = {
     'right'
   ]),
   label: PropTypes.string,
-};
+  disabled: PropTypes.bool,
+  mod: PropTypes.number
+}
 
 export default Key

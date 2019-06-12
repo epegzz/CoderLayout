@@ -57,6 +57,19 @@ const UpDownKeysWrapper = styled.div`
 // A list of Keyboard Unicode characters can be found at
 // https://gist.github.com/Zenexer/c5243c4216f1f8cd2251
 
+const formatQwertyLabel = (label) => {
+  if (Array.isArray(label) && label.length > 1) {
+    return (
+      <span>
+        {label[1]}
+        <br />
+        {label[0]}
+      </span>
+    )
+  }
+  return label
+}
+
 const defaultKeys = [
   // fn row
   { type: 'fn', code: 41, name: 'escape', label: 'esc' },
@@ -75,65 +88,65 @@ const defaultKeys = [
   { type: 'fn', code: 0, name: 'eject', label: '⏏' },
   
   // numbers row
-  { type: 'default', code: 100, name: 'non_us_backslash', label: '^' },
-  { type: 'default', code: 30, name: '1', label: '1' },
-  { type: 'default', code: 31, name: '2', label: '2' },
-  { type: 'default', code: 32, name: '3', label: '3' },
-  { type: 'default', code: 33, name: '4', label: '4' },
-  { type: 'default', code: 34, name: '5', label: '5' },
-  { type: 'default', code: 35, name: '6', label: '6' },
-  { type: 'default', code: 36, name: '7', label: '7' },
-  { type: 'default', code: 37, name: '8', label: '8' },
-  { type: 'default', code: 38, name: '9', label: '9' },
-  { type: 'default', code: 39, name: '0', label: '0' },
-  { type: 'default', code: 45, name: 'hyphen', label: 'ß' },
-  { type: 'default', code: 46, name: 'equal_sign', label: '´' },
+  { type: 'default', code: 100, name: 'non_us_backslash', label: ['^', '°', '„'] },
+  { type: 'default', code: 30, name: '1', label: ['1', '!', '¡'] },
+  { type: 'default', code: 31, name: '2', label: ['2', '"', '“'] },
+  { type: 'default', code: 32, name: '3', label: ['3', '§', '¶'] },
+  { type: 'default', code: 33, name: '4', label: ['4', '$', '¢'] },
+  { type: 'default', code: 34, name: '5', label: ['5', '%', '['] },
+  { type: 'default', code: 35, name: '6', label: ['6', '&', ']'] },
+  { type: 'default', code: 36, name: '7', label: ['7', '/', '|'] },
+  { type: 'default', code: 37, name: '8', label: ['8', '(', '{'] },
+  { type: 'default', code: 38, name: '9', label: ['9', ')', '}'] },
+  { type: 'default', code: 39, name: '0', label: ['0', '=', '≠'] },
+  { type: 'default', code: 45, name: 'hyphen', label: ['ß', '?', '¿'] },
+  { type: 'default', code: 46, name: 'equal_sign', label: ['´', '`', '\''] },
   { type: 'delete', code: 42, name: 'delete_or_backspace', label: '⌫' },
   
   // Row 1
   { type: 'tab', code: 43, name: 'tab', label: '⇥' },
-  { type: 'default', code: 20, name: 'q', label: 'Q' },
-  { type: 'default', code: 26, name: 'w', label: 'W' },
-  { type: 'default', code: 8, name: 'e', label: 'E' },
-  { type: 'default', code: 21, name: 'r', label: 'R' },
-  { type: 'default', code: 23, name: 't', label: 'T' },
-  { type: 'default', code: 28, name: 'z', label: 'Z' },
-  { type: 'default', code: 24, name: 'u', label: 'U' },
-  { type: 'default', code: 12, name: 'i', label: 'I' },
-  { type: 'default', code: 18, name: 'o', label: 'O' },
-  { type: 'default', code: 19, name: 'p', label: 'P' },
-  { type: 'default', code: 47, name: 'open_bracket', label: 'Ü' },
-  { type: 'default', code: 48, name: 'close_bracket', label: '+' },
+  { type: 'default', code: 20, name: 'q', label: ['Q', undefined, '«'] },
+  { type: 'default', code: 26, name: 'w', label: ['W', undefined, '∑'] },
+  { type: 'default', code: 8, name: 'e', label: ['E', undefined, '€'] },
+  { type: 'default', code: 21, name: 'r', label: ['R', undefined, '®'] },
+  { type: 'default', code: 23, name: 't', label: ['T', undefined, '†'] },
+  { type: 'default', code: 28, name: 'z', label: ['Z', undefined, 'Ω'] },
+  { type: 'default', code: 24, name: 'u', label: ['U', undefined, '¨'] },
+  { type: 'default', code: 12, name: 'i', label: ['I', undefined, '⁄'] },
+  { type: 'default', code: 18, name: 'o', label: ['O', undefined, 'ø'] },
+  { type: 'default', code: 19, name: 'p', label: ['P', undefined, 'π'] },
+  { type: 'default', code: 47, name: 'open_bracket', label: ['Ü', undefined, '•'] },
+  { type: 'default', code: 48, name: 'close_bracket', label: ['+', '*', '±'] },
   { type: 'germanReturn', code: 40, name: 'return_or_enter', label: '⏎' },
   
   // Row 2
   { type: 'caps', code: 57, name: 'caps_lock', label: '⇪' },
-  { type: 'default', code: 4, name: 'a', label: 'A' },
-  { type: 'default', code: 22, name: 's', label: 'S' },
-  { type: 'default', code: 7, name: 'd', label: 'D' },
-  { type: 'default', code: 9, name: 'f', label: 'F' },
-  { type: 'default', code: 10, name: 'g', label: 'G' },
-  { type: 'default', code: 11, name: 'h', label: 'H' },
-  { type: 'default', code: 13, name: 'j', label: 'J' },
-  { type: 'default', code: 14, name: 'k', label: 'K' },
-  { type: 'default', code: 15, name: 'l', label: 'L' },
-  { type: 'default', code: 51, name: 'semicolon', label: 'Ö' },
-  { type: 'default', code: 52, name: 'quote', label: 'Ä' },
-  { type: 'default', code: 50, name: 'backslash', label: '#' },
+  { type: 'default', code: 4, name: 'a', label: ['A', undefined, 'å'] },
+  { type: 'default', code: 22, name: 's', label: ['S', undefined, '‚'] },
+  { type: 'default', code: 7, name: 'd', label: ['D', undefined, '∂'] },
+  { type: 'default', code: 9, name: 'f', label: ['F', undefined, 'ƒ'] },
+  { type: 'default', code: 10, name: 'g', label: ['G', undefined, '©'] },
+  { type: 'default', code: 11, name: 'h', label: ['H', undefined, 'ª'] },
+  { type: 'default', code: 13, name: 'j', label: ['J', undefined, 'º'] },
+  { type: 'default', code: 14, name: 'k', label: ['K', undefined, 'Δ'] },
+  { type: 'default', code: 15, name: 'l', label: ['L', undefined, '@'] },
+  { type: 'default', code: 51, name: 'semicolon', label: ['Ö', undefined, 'œ'] },
+  { type: 'default', code: 52, name: 'quote', label: ['Ä', undefined, 'æ'] },
+  { type: 'default', code: 50, name: 'backslash', label: ['#', '\'', '‘'] },
   
   // Row 3
   { type: 'shortShift', code: 225, name: 'left_shift', label: '⇧' },
-  { type: 'default', code: 53, name: 'grave_accent_and_tilde', label: '>' },
-  { type: 'default', code: 29, name: 'z', label: 'Y' },
-  { type: 'default', code: 27, name: 'x', label: 'X' },
-  { type: 'default', code: 6, name: 'c', label: 'C' },
-  { type: 'default', code: 25, name: 'v', label: 'V' },
-  { type: 'default', code: 5, name: 'b', label: 'B' },
-  { type: 'default', code: 17, name: 'n', label: 'N' },
-  { type: 'default', code: 16, name: 'm', label: 'M' },
-  { type: 'default', code: 54, name: 'comma', label: ',' },
-  { type: 'default', code: 55, name: 'period', label: '.' },
-  { type: 'default', code: 56, name: 'slash', label: '-' },
+  { type: 'default', code: 53, name: 'grave_accent_and_tilde', label: ['<', '>', '≤'] },
+  { type: 'default', code: 29, name: 'z', label: ['Y', undefined, '¥'] },
+  { type: 'default', code: 27, name: 'x', label: ['X', undefined, '≈'] },
+  { type: 'default', code: 6, name: 'c', label: ['C', undefined, 'ç'] },
+  { type: 'default', code: 25, name: 'v', label: ['V', undefined, '√'] },
+  { type: 'default', code: 5, name: 'b', label: ['B', undefined, '∫'] },
+  { type: 'default', code: 17, name: 'n', label: ['N', undefined, '~'] },
+  { type: 'default', code: 16, name: 'm', label: ['M', undefined, 'µ'] },
+  { type: 'default', code: 54, name: 'comma', label: [',', ';', '∞'] },
+  { type: 'default', code: 55, name: 'period', label: ['.', ':', '…'] },
+  { type: 'default', code: 56, name: 'slash', label: ['-', '_', '–'] },
   { type: 'longShift', code: 229, name: 'right_shift', label: '⇧' },
   
   // Row 4
@@ -152,12 +165,27 @@ const defaultKeys = [
 
 class Keyboard extends React.Component {
   render() {
+    const { formatLabel = formatQwertyLabel } = this.props
     let { keys = [] } = this.props
 
-    keys = defaultKeys.map((defaults, index) => ({
-      ...defaults,
-      ...(keys[index] || {}),
-    }))
+    keys = defaultKeys.map((defaults, index) => {
+      const key = keys[index] || {}
+
+      if (key.map) {
+        return {
+          ...(keys.find(key => key.name === key.map) || {})
+        }
+      }
+
+      return {
+        ...defaults,
+        ...key,
+      }
+    })
+
+    for (const key of keys) {
+      key.label = formatLabel(key.label)
+    }
 
     return (
       <Wrapper>
@@ -274,7 +302,8 @@ class Keyboard extends React.Component {
 }
 
 Keyboard.propTypes = {
-  keys: PropTypes.arrayOf(Key.propTypes)
+  keys: PropTypes.arrayOf(Key.propTypes),
+  formatLabel: PropTypes.func
 }
 
 export default Keyboard
