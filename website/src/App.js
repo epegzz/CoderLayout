@@ -49,7 +49,7 @@ const coderLayoutKeys = [
   { label: ['M', '⌦', '=', '9', undefined] },
   { label: ['W', undefined, '&', undefined, undefined] },
   { label: ['Q', undefined, '@', undefined, undefined] },
-  { label: ['ß', undefined, '°', undefined, undefined] },
+  { label: ['ß', undefined, undefined, undefined, undefined] }, // TODO: add '°' to M1 layer
   { label: '', disabled: true },
 
   // Row 2
@@ -191,8 +191,14 @@ const qwertyKeys = [
 
 const codingCharacters = coderLayoutKeys.reduce((result, key) => ([
   ...result,
-  key.label[2]
+  Array.isArray(key.label) && key.label[2]
 ]), []).filter(o => o && o.length)
+
+const navigationCharacters = coderLayoutKeys.reduce((result, key) => ([
+  ...result,
+  Array.isArray(key.label) && key.label[1],
+  Array.isArray(key.label) && key.label[4],
+]), []).filter(o => o && o.length && !o.startsWith('⌘'))
 
 const ModLabel = styled.div`
   position: absolute;
@@ -286,13 +292,36 @@ const formatLabelForCodingLayer = (mods) => ({ label, mod }) => {
   )
 }
 
+const formatLabelForNavigationLayer = (mods) => ({ label, mod }) => {
+  if (mods.includes(mod)) return label
+  if (!Array.isArray(label)) label = [label]
+  const codingNavigationLabels = label.reduce((result, labelForLayer) => [...result, navigationCharacters.includes(labelForLayer) && labelForLayer], []).filter(o => !!o)
+  if (codingNavigationLabels.length === 0) return
+  if (codingNavigationLabels.length === 1) return codingNavigationLabels[0]
+  if (codingNavigationLabels.length === 2) return (
+    <div>
+      <Label1Of2>{codingNavigationLabels[0]}</Label1Of2>
+      <Label2Of2>{codingNavigationLabels[1]}</Label2Of2>
+    </div>
+  )
+  return (
+    <div>
+      <Label1Of3>{codingNavigationLabels[0]}</Label1Of3>
+      <Label2Of3>{codingNavigationLabels[1]}</Label2Of3>
+      <Label3Of3>{codingNavigationLabels[2]}</Label3Of3>
+    </div>
+  )
+}
+
 const sectionBackgroundColors = {
   header: '#282c34',
-  typing: '#28342f',
+  coding: '#28342f',
+  navigation: '#28342f'
 }
 const sectionTextColors = {
   header: 'white',
-  typing: 'white'
+  coding: 'white',
+  navigation: 'white'
 }
 
 const Section = styled.div`
@@ -330,7 +359,7 @@ class App extends Component {
             keys={qwertyKeys}
           />
         </Section>
-        <Section theme={'typing'}>
+        <Section theme={'coding'}>
           <h1>
             CoderLayout
           </h1>
@@ -344,6 +373,24 @@ class App extends Component {
           </h1>
           <Keyboard
             formatLabel={formatLabelForCodingLayer([1, 2])}
+            keys={qwertyKeys}
+            disableKeysWithoutLabels
+          />
+        </Section>
+        <Section theme={'navigation'}>
+          <h1>
+            CoderLayout
+          </h1>
+          <Keyboard
+            formatLabel={formatLabelForNavigationLayer([1])}
+            keys={coderLayoutKeys}
+            disableKeysWithoutLabels
+          />
+          <h1>
+            QWERTZ
+          </h1>
+          <Keyboard
+            formatLabel={formatLabelForNavigationLayer([3 ])}
             keys={qwertyKeys}
             disableKeysWithoutLabels
           />

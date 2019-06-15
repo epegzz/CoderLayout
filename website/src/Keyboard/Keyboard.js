@@ -117,7 +117,7 @@ const defaultKeys = [
   { type: 'default', code: 19, name: 'p', label: ['P', undefined, 'π', undefined, '∏'] },
   { type: 'default', code: 47, name: 'open_bracket', label: ['Ü', undefined, '•', undefined, '°'] },
   { type: 'default', code: 48, name: 'close_bracket', label: ['+', '*', '±', undefined, ''] },
-  { type: 'germanReturn', code: 40, name: 'return_or_enter', label: '⏎' },
+  { type: 'germanReturn', code: 40, name: 'return_or_enter', label: '↩' },
   
   // Row 2
   { type: 'caps', code: 57, name: 'caps_lock', label: '⇪' },
