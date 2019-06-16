@@ -2,17 +2,17 @@ const fs = require('fs')
 const path = require('path')
 const yaml = require('js-yaml')
 
-const normalizeConfig = require('../../utils/normalizeConfig')
+const normalizeConfig = require('../utils/normalizeConfig')
 const generateTriggers = require('./lib/generateLayerTriggers')
 const generateLayer = require('./lib/generateLayer')
 
 const TEMPLATE_KARABINER_JSON_FILENAME = path.resolve(
   __dirname,
-  '../karabiner.template.json'
+  'karabiner.template.json'
 )
 const DIST_KARABINER_JSON_FILENAME = path.resolve(
   __dirname,
-  '../dist/karabiner.json'
+  '../../dist/karabiner.json'
 )
 const configOut = JSON.parse(fs.readFileSync(TEMPLATE_KARABINER_JSON_FILENAME))
 
@@ -21,12 +21,12 @@ configOut.profiles[0].complex_modifications.rules = rules
 
 const config = normalizeConfig(
   yaml.safeLoad(
-    fs.readFileSync(path.resolve(__dirname, '../../config/layout.yml'), 'utf8')
+    fs.readFileSync(path.resolve(__dirname, '../config/layout.yml'), 'utf8')
   )
 )
 
 let allTriggerKeys = []
-const collectTriggerKeysFromLayer = (triggerKeys) => {
+const collectTriggerKeysFromLayer = triggerKeys => {
   if (!Array.isArray(triggerKeys)) triggerKeys = [triggerKeys]
   allTriggerKeys = [...allTriggerKeys, ...triggerKeys]
 }

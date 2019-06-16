@@ -1,5 +1,5 @@
 const generateLayer = require('./generateLayer')
-const normalizeConfig = require('../../../utils/normalizeConfig')
+const normalizeConfig = require('../../utils/normalizeConfig')
 
 describe('generateLayer', () => {
   it('works', () => {

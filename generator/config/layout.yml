@@ -1,4 +1,24 @@
 layers:
+  base:
+    description: "Base Layer"
+    mappings:
+      - a: 'c'
+      - s: 't'
+
+  shift:
+    description: "Shift Layer"
+    trigger: [[spacebar], [some_other_key]]
+    mappings:
+      - a: 'C'
+      - s: 'T'
+
+  coding:
+    description: "Coding Layer"
+    trigger: [[grave_accent_and_tilde], [some_other_key]]
+    mappings:
+      - a: '\'
+      - s: '/'
+
   numbers:
     description: "Numbers Layer"
     trigger: grave_accent_and_tilde
@@ -18,18 +38,18 @@ layers:
     description: "Navigation Layer Plus"
     trigger: [left_command, spacebar]
     mappings:
-    - j:
-        key_code: left_arrow
-        modifier: left_option
-    - k:
-        key_code: down_arrow
-        modifier: left_option
-    - l:
-        key_code: right_arrow
-        modifier: left_option
-    - i:
-        key_code: up_arrow
-        modifier: left_option
+      - j:
+          key_code: left_arrow
+          modifier: left_option
+      - k:
+          key_code: down_arrow
+          modifier: left_option
+      - l:
+          key_code: right_arrow
+          modifier: left_option
+      - i:
+          key_code: up_arrow
+          modifier: left_option
 
 
 

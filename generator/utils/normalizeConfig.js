@@ -1,3 +1,10 @@
+/**
+ * Allows using shorthand syntax in the config yaml file and converts it into
+ * a normalized syntax for further use by the keylayout and karabiner generators.
+ *
+ * See the normalizeConfig.test.js for examples.
+ */
+
 function normalizeConfig(inputObj = {}) {
   const result = {}
   result.layers = normalizeLayers(inputObj.layers)
