@@ -6,23 +6,26 @@ const yamlInput = `
     some_layer:
       description: 'some layer'
       trigger: left_command
+      output:
+        - 3-1: a
+        - 3-2: '&#x000D;'
       mappings:
-        - a: 1
-        - from: b
+        - 4-2: 1
+        - from: 5-7
           to: 2
         - from:
-            key_code: c
+            key_code: 5-5
           to: 3
-        - d:
+        - 4-4:
             key_code: 4
             modifier: left_command    
-        - e:
+        - 3-4:
             key_code: 5
             modifiers: left_command    
-        - f:
+        - 4-5:
             key_code: 6
             modifiers: [left_command, left_shift]    
-        - g:
+        - 4-6:
           - 7
           - 8
 `
@@ -32,6 +35,9 @@ const yamlOutput = `
     some_layer:
       description: 'some layer'
       trigger: left_command
+      output:
+        - 43: a
+        - 20: '&#x000D;'
       mappings:
         - from:
             key_code: a
