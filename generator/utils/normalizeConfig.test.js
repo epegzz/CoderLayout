@@ -7,8 +7,8 @@ const yamlInput = `
       description: 'some layer'
       trigger: left_command
       output:
-        - 3-1: a
-        - 3-2: '&#x000D;'
+        - 3-1: a # using key coord
+        - escape: '&#x000D;' # using key name
       mappings:
         - 4-2: 1
         - from: 5-7
@@ -37,7 +37,7 @@ const yamlOutput = `
       trigger: left_command
       output:
         - 43: a
-        - 20: '&#x000D;'
+        - 41: '&#x000D;'
       mappings:
         - from:
             key_code: a
