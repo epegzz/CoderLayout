@@ -110,7 +110,7 @@ const defaultKeys = [
   { type: 'default', code: 8, name: 'e', label: ['E', undefined, '€', undefined, '‰'] },
   { type: 'default', code: 21, name: 'r', label: ['R', undefined, '®', undefined, '¸'] },
   { type: 'default', code: 23, name: 't', label: ['T', undefined, '†', undefined, '˝'] },
-  { type: 'default', code: 28, name: 'z', label: ['Z', undefined, 'Ω', undefined, 'ˇ'] },
+  { type: 'default', code: 28, name: 'y', label: ['Z', undefined, 'Ω', undefined, 'ˇ'] },
   { type: 'default', code: 24, name: 'u', label: ['U', undefined, '¨', undefined, 'Á'] },
   { type: 'default', code: 12, name: 'i', label: ['I', undefined, '⁄', undefined, 'Û'] },
   { type: 'default', code: 18, name: 'o', label: ['O', undefined, 'ø', undefined, 'Ø'] },
