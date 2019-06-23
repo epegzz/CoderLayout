@@ -2,7 +2,7 @@ const fs = require('fs')
 const path = require('path')
 const yaml = require('js-yaml')
 
-const normalizeConfig = require('../utils/normalizeConfig')
+const normalizeLayoutConfig = require('../../config/utils/normalizeLayoutConfig')
 const generateTriggers = require('./lib/generateLayerTriggers')
 const generateLayer = require('./lib/generateLayer')
 
@@ -19,7 +19,7 @@ const configOut = JSON.parse(fs.readFileSync(TEMPLATE_KARABINER_JSON_FILENAME))
 const rules = []
 configOut.profiles[0].complex_modifications.rules = rules
 
-const config = normalizeConfig(
+const config = normalizeLayoutConfig(
   yaml.safeLoad(
     fs.readFileSync(path.resolve(__dirname, '../config/layout.yml'), 'utf8')
   )

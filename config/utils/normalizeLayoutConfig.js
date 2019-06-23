@@ -2,14 +2,12 @@
  * Allows using shorthand syntax in the config yaml file and converts it into
  * a normalized syntax for further use by the keylayout and karabiner generators.
  *
- * See the normalizeConfig.test.js for examples.
+ * See the normalizeLayoutConfig.test.js for examples.
  */
-
-const fs = require('fs')
-const path = require('path')
-const yaml = require('js-yaml')
-
-const keyCodes = yaml.safeLoad(fs.readFileSync(path.resolve(__dirname, 'keyCodes.yml'), 'utf8'))
+const loadYaml = require('./loadYaml')
+const keyCodes = loadYaml('config/keyCodes.yml')
+const usedKeyboard = loadYaml('config/keyboard.yml')
+const unicodes = loadYaml('config/outputUnicodes.yml')
 
 /**
  * Allows us to specify key coords instead of key names:
@@ -29,22 +27,14 @@ function mapKeyCoordToKeyName(keyCoord) {
   }
   const coords = keyCoord.split('-')
 
-  const layout = [
-    ['escape', 'f1', 'f2', 'f3', 'f4', 'f5', 'f6', 'f7', 'f8', 'f9', 'f10', 'f11', 'f12'],
-    ['non_us_backslash', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', 'hyphen', 'equal_sign', 'delete_or_backspace'],
-    ['tab', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'open_bracket', 'close_bracket', 'return_or_enter'],
-    ['caps_lock', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'semicolon', 'quote', 'backslash'],
-    ['left_shift', 'grave_accent_and_tilde', 'z', 'x', 'c', 'v', 'b', 'n', 'm', 'comma', 'period', 'slash', 'right_shift'],
-    ['fn', 'left_control', 'left_alt', 'left_command', 'spacebar', 'right_command', 'right_alt', 'left', 'up', 'down', 'right']
-  ]
-  return layout[Number(coords[0]) - 1][Number(coords[1]) - 1]
+  return usedKeyboard.layout[Number(coords[0]) - 1][Number(coords[1]) - 1]
 }
 
 function mapKeyNameToKeyCode(keyName) {
   return keyCodes[keyName]
 }
 
-function normalizeConfig(inputObj = {}) {
+function normalizeLayoutConfig(inputObj = {}) {
   const result = {}
   result.layers = normalizeLayers(inputObj.layers)
   return result
@@ -57,8 +47,8 @@ function normalizeLayers(layers) {
     result[layerId] = {
       description: layer.description,
       trigger: layer.trigger,
-      mappings: normalizeLayerMappings(layer.mappings),
-      output: normalizeLayerOutput(layer.output)
+      mappings: layer.mappings && normalizeLayerMappings(layer.mappings),
+      output: layer.output && normalizeLayerOutput(layer.output)
     }
   }
   return result
@@ -132,10 +122,12 @@ function normalizeLayerMappingTo(to = []) {
 }
 
 /**
- * Replaces key names or key coords with key codes
+ * - Replaces key names or key coords with key codes.
+ * - Adds shift value if shift value was omitted.
  */
 function normalizeLayerOutput(layerOutput) {
   return layerOutput.map(entry => {
+    // Replace key names or key coords with key codes.
     let keyCode = mapKeyCoordToKeyName(Object.keys(entry)[0])
     if (!Object.keys(keyCodes).includes(keyCode)) {
       keyCode = mapKeyNameToKeyCode(keyCode)
@@ -143,8 +135,19 @@ function normalizeLayerOutput(layerOutput) {
     if (!Object.keys(keyCodes).includes(keyCode)) {
       throw new Error(`Invalid layer output entry: ${JSON.stringify(entry)}. No such keyCode "${keyCode}"`)
     }
-    return { [keyCodes[keyCode]]: Object.values(entry)[0]}
+
+    // Add shift value if shift value was omitted.
+    let value = Object.values(entry)[0]
+    if (!Array.isArray(value)) {
+      value = [value, value]
+    }
+
+    // Allow referencing unicodes by name
+    if (unicodes[value[0]]) value[0] = unicodes[value[0]]
+    if (unicodes[value[1]]) value[1] = unicodes[value[1]]
+
+    return { [keyCodes[keyCode]]: value}
   })
 }
 
-module.exports = normalizeConfig
+module.exports = normalizeLayoutConfig

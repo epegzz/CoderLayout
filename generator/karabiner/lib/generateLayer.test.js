@@ -1,9 +1,9 @@
 const generateLayer = require('./generateLayer')
-const normalizeConfig = require('../../utils/normalizeConfig')
+const normalizeLayoutConfig = require('../../../config/utils/normalizeLayoutConfig')
 
 describe('generateLayer', () => {
   it('works', () => {
-    const config = normalizeConfig({
+    const config = normalizeLayoutConfig({
       layers: {
         test: {
           description: 'description',

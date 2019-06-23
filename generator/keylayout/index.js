@@ -1,6 +1,6 @@
 const fs = require('fs')
 const path = require('path')
-
+const config = require('../../config')
 const generateKeylayout = require('./lib/generateKeylayout')
 
 const DIST_KEYLAYOUT_FILENAME = path.resolve(
@@ -8,12 +8,11 @@ const DIST_KEYLAYOUT_FILENAME = path.resolve(
   '../../dist/CoderLayout.keylayout'
 )
 
-const keylayout = generateKeylayout()
+const keylayout = generateKeylayout(config)
 
 console.log(keylayout)
-/*
+
 fs.writeFileSync(
   DIST_KEYLAYOUT_FILENAME,
   keylayout
 )
-*/

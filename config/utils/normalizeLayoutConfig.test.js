@@ -1,5 +1,5 @@
 const yaml = require('js-yaml')
-const normalizeConfig = require('./normalizeConfig')
+const normalizeLayoutConfig = require('./normalizeLayoutConfig')
 
 const yamlInput = `
   layers:
@@ -7,8 +7,8 @@ const yamlInput = `
       description: 'some layer'
       trigger: left_command
       output:
-        - 3-1: a # using key coord
-        - escape: '&#x000D;' # using key name
+        - 3-1: ['a', 'A'] # Using key coord; Providing shift value
+        - return_or_enter: return # Using key name; Using unicode name; Omitting shift value
       mappings:
         - 4-2: 1
         - from: 5-7
@@ -36,8 +36,8 @@ const yamlOutput = `
       description: 'some layer'
       trigger: left_command
       output:
-        - 43: a
-        - 41: '&#x000D;'
+        - 43: ['a', 'A']
+        - 40: ['&#x000D;', '&#x000D;']
       mappings:
         - from:
             key_code: a
@@ -73,8 +73,8 @@ const yamlOutput = `
             - key_code: '8'
 `
 
-describe('normalizeConfig', () => {
+describe('normalizeLayoutConfig', () => {
   it('works as expected', () => {
-    expect(normalizeConfig(yaml.load(yamlInput))).toEqual(yaml.load(yamlOutput))
+    expect(normalizeLayoutConfig(yaml.load(yamlInput))).toEqual(yaml.load(yamlOutput))
   })
 })

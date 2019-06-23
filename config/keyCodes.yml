@@ -1,3 +1,5 @@
+# This file contains all potentially used key codes
+
 # Row 1
 escape: 41
 f1: 58
@@ -15,16 +17,16 @@ f12: 69
 
 # Row 2
 non_us_backslash: 100
-'1': 30
-'2': 31
-'3': 32
-'4': 33
-'5': 34
-'6': 35
-'7': 36
-'8': 37
-'9': 38
-'0': 39
+1: 30
+2: 31
+3: 32
+4: 33
+5: 34
+6: 35
+7: 36
+8: 37
+9: 38
+0: 39
 hyphen: 45
 equal_sign: 46
 delete_or_backspace: 42
@@ -102,3 +104,8 @@ f21: 112
 f22: 113
 f23: 114
 f24: 115
+
+page_up: 75
+page_down: 78
+home: 74
+end: 77

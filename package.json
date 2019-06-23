@@ -8,8 +8,8 @@
   },
   "scripts": {
     "test": "jest ./**/*.test.js",
-    "generate:karabiner": "node karabiner",
-    "generate:keylayout": "node keylayout"
+    "generate:karabiner": "node generator/karabiner",
+    "generate:keylayout": "node generator/keylayout"
   },
   "repository": {
     "type": "git",
@@ -31,6 +31,7 @@
   "dependencies": {
     "js-yaml": "^3.12.2",
     "lodash": "^4.17.11",
+    "moment": "^2.24.0",
     "xml-js": "^1.6.11"
   }
 }
