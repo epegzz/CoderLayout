@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "js-yaml": "^3.12.2",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.13",
     "moment": "^2.24.0",
     "xml-beautifier": "^0.4.2",
     "xml-js": "^1.6.11"
