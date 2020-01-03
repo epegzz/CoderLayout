@@ -1,15 +1,13 @@
 {
   "name": "@epegzz/coderlayout",
   "version": "1.0.0",
-  "description": "A power user keyboard layout",
+  "description": "A Keyboard Layout for Coders",
   "main": "index.js",
-  "directories": {
-    "doc": "docs"
-  },
   "scripts": {
     "test": "jest ./**/*.test.js",
     "generate:karabiner": "node generator/karabiner",
-    "generate:keylayout": "node generator/keylayout"
+    "generate:keylayout": "node generator/keylayout",
+    "generate:icns": "./generator/keylayout/generate-icns.sh resources/icns.png dist/CoderLayout"
   },
   "repository": {
     "type": "git",
@@ -32,6 +30,7 @@
     "js-yaml": "^3.12.2",
     "lodash": "^4.17.11",
     "moment": "^2.24.0",
+    "xml-beautifier": "^0.4.2",
     "xml-js": "^1.6.11"
   }
 }

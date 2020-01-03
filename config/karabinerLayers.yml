@@ -1,0 +1,573 @@
+base:
+  mapping:
+    escape: 'escape'
+    f1:
+    f2:
+    f3:
+    f4:
+    f5:
+    f6:
+    f7:
+    f8:
+    f9:
+    f10:
+    f11:
+    f12:
+    power:
+
+    # Row 1
+    non_us_backslash: left_shift
+    1: left_control
+    2: left_command
+    3: left_option
+    4:
+    5:
+    6:
+    7:
+    8:
+    9: left_option
+    0: left_command
+    hyphen: left_control
+    equal_sign: left_shift
+    delete_or_backspace: 'backspace'
+
+    # Row 2
+    tab:
+    q: 'j'
+    w: 'd'
+    e: 'u'
+    r: 'a'
+    t: 'x'
+    y: 'p'
+    u: 'h'
+    i: 'l'
+    o: 'm'
+    p: 'w'
+    open_bracket: 'q'
+    close_bracket: 'ß'
+    return_or_enter: 'return'
+
+    # Row 3
+    caps_lock:
+    a: 'c'
+    s: 't'
+    d: 'i'
+    f: 'e'
+    g: 'o'
+    h: 'b'
+    j: 'n'
+    k: 'r'
+    l: 's'
+    semicolon: 'g'
+    quote:
+    backslash:
+
+    # Row 4
+    left_shift: right_shift
+    grave_accent_and_tilde:
+    z: 'f'
+    x: 'v'
+    c: 'ü'
+    v: 'ä'
+    b: 'ö'
+    n: 'y'
+    m: 'z'
+    comma: ','
+    period: '.'
+    slash: 'k'
+    right_shift: right_shift
+
+    # Row 5
+    # fn:
+    left_control:
+    left_alt:
+    left_command:
+    spacebar: ' '
+    right_command:
+    right_alt:
+    left_arrow: left_arrow
+    up_arrow: up_arrow
+    down_arrow: down_arrow
+    right_arrow: right_arrow
+
+shift:
+  triggerKeys: [spacebar]
+  mapping:
+    escape: 'escape'
+    f1:
+    f2:
+    f3:
+    f4:
+    f5:
+    f6:
+    f7:
+    f8:
+    f9:
+    f10:
+    f11:
+    f12:
+    power:
+
+    # Row 1
+    non_us_backslash: left_shift
+    1: left_control
+    2: left_command
+    3: left_option
+    4:
+    5:
+    6:
+    7:
+    8:
+    9: left_option
+    0: left_command
+    hyphen: left_control
+    equal_sign: left_shift
+    delete_or_backspace: 'backspace'
+
+    # Row 2
+    tab:
+    q: 'J'
+    w: 'D'
+    e: 'U'
+    r: 'A'
+    t: 'X'
+    y: 'P'
+    u: 'H'
+    i: 'L'
+    o: 'M'
+    p: 'W'
+    open_bracket: 'Q'
+    close_bracket: '?'
+    return_or_enter: 'return'
+
+    # Row 3
+    caps_lock:
+    a: 'C'
+    s: 'T'
+    d: 'I'
+    f: 'E'
+    g: 'O'
+    h: 'B'
+    j: 'N'
+    k: 'R'
+    l: 'S'
+    semicolon: 'G'
+    quote:
+    backslash:
+
+    # Row 4
+    left_shift: right_shift
+    grave_accent_and_tilde:
+    z: 'F'
+    x: 'V'
+    c: 'Ü'
+    v: 'Ä'
+    b: 'Ö'
+    n: 'Y'
+    m: 'Z'
+    comma: ';'
+    period: ':'
+    slash: 'K'
+    right_shift: right_shift
+
+    # Row 5
+    # fn:
+    left_control:
+    left_alt:
+    left_command:
+    spacebar: ' '
+    right_command:
+    right_alt:
+    left_arrow: left_arrow
+    up_arrow: up_arrow
+    down_arrow: down_arrow
+    right_arrow: right_arrow
+
+coding:
+  triggerKeys: [caps_lock, quote]
+  mapping:
+    escape: 'escape'
+    f1:
+    f2:
+    f3:
+    f4:
+    f5:
+    f6:
+    f7:
+    f8:
+    f9:
+    f10:
+    f11:
+    f12:
+    power:
+
+    # Row 1
+    non_us_backslash: left_shift
+    1: left_control
+    2: left_command
+    3: left_option
+    4:
+    5:
+    6:
+    7:
+    8:
+    9: left_option
+    0: left_command
+    hyphen: left_control
+    equal_sign: left_shift
+    delete_or_backspace: 'backspace'
+
+    # Row 2
+    tab:
+    q: '…'
+    w: '_'
+    e: '['
+    r: ']'
+    t: '^'
+    y: '!'
+    u: '<'
+    i: '>'
+    o: '='
+    p: '&'
+    open_bracket: '@'
+    close_bracket: '°'
+    return_or_enter: 'return'
+
+    # Row 3
+    caps_lock:
+    a: '\'
+    s: '/'
+    d: '{'
+    f: '}'
+    g: '*'
+    h: '?'
+    j: '('
+    k: ')'
+    l: '-'
+    semicolon: ':'
+    quote:
+    backslash:
+
+    # Row 4
+    left_shift: right_shift
+    grave_accent_and_tilde:
+    z: '#'
+    x: '$'
+    c: '|'
+    v: '~'
+    b: '`'
+    n: '+'
+    m: '%'
+    comma: '"'
+    period: "'"
+    slash: ';'
+    right_shift: right_shift
+
+    # Row 5
+    # fn:
+    left_control:
+    left_alt:
+    left_command:
+    spacebar: ' '
+    right_command:
+    right_alt:
+    left_arrow: left_arrow
+    up_arrow: up_arrow
+    down_arrow: down_arrow
+    right_arrow: right_arrow
+
+navigation:
+  triggerKeys: [left_command]
+  mapping:
+    escape: 'escape'
+    f1:
+    f2:
+    f3:
+    f4:
+    f5:
+    f6:
+    f7:
+    f8:
+    f9:
+    f10:
+    f11:
+    f12:
+    power:
+
+    # Row 1
+    non_us_backslash: left_shift
+    1: left_control
+    2: left_command
+    3: left_option
+    4:
+    5:
+    6:
+    7:
+    8:
+    9: left_option
+    0: left_command
+    hyphen: left_control
+    equal_sign: left_shift
+    delete_or_backspace: 'backspace'
+
+    # Row 2
+    tab:
+    q:
+    w:
+    e:
+    r:
+    t:
+    y:
+    u: 'backspace'
+    i: 'up'
+    o: 'delete'
+    p:
+    open_bracket:
+    close_bracket:
+    return_or_enter: 'return'
+
+    # Row 3
+    caps_lock:
+    a:
+    s:
+    d:
+    f:
+    g:
+    h:
+      output: 'left'
+      modifiers: ['command']
+    j: 'left'
+    k: 'down'
+    l: 'right'
+    semicolon:
+      output: 'right'
+      modifiers: ['command']
+    quote:
+    backslash:
+
+    # Row 4
+    left_shift: right_shift
+    grave_accent_and_tilde:
+    z:
+    x:
+    c:
+    v:
+    b:
+    n:
+    m: 'return'
+    comma:
+    period:
+    slash:
+    right_shift: right_shift
+
+    # Row 5
+    # fn:
+    left_control:
+    left_alt:
+    left_command:
+    spacebar: 'escape'
+    right_command:
+    right_alt:
+    left_arrow: left_arrow
+    up_arrow: up_arrow
+    down_arrow: down_arrow
+    right_arrow: right_arrow
+
+navigation_plus:
+  triggerKeys: [[left_command, spacebar]]
+  mapping:
+    escape: 'escape'
+    f1:
+    f2:
+    f3:
+    f4:
+    f5:
+    f6:
+    f7:
+    f8:
+    f9:
+    f10:
+    f11:
+    f12:
+    power:
+
+    # Row 1
+    non_us_backslash: left_shift
+    1: left_control
+    2: left_command
+    3: left_option
+    4:
+    5:
+    6:
+    7:
+    8:
+    9: left_option
+    0: left_command
+    hyphen: left_control
+    equal_sign: left_shift
+    delete_or_backspace: 'backspace'
+
+    # Row 2
+    tab:
+    q:
+    w:
+    e:
+    r:
+    t:
+    y:
+    u:
+    i:
+      output: 'up'
+      modifiers: ['option']
+    o:
+    p:
+    open_bracket:
+    close_bracket:
+    return_or_enter: 'return'
+
+    # Row 3
+    caps_lock:
+    a:
+    s:
+    d:
+    f:
+    g:
+    h:
+      output: 'left'
+      modifiers: ['command']
+    j:
+      output: 'left'
+      modifiers: ['option']
+    k:
+      output: 'down'
+      modifiers: ['option']
+    l:
+      output: 'right'
+      modifiers: ['option']
+    semicolon:
+      output: 'right'
+      modifiers: ['command']
+    quote:
+    backslash:
+
+    # Row 4
+    left_shift: right_shift
+    grave_accent_and_tilde:
+    z:
+    x:
+    c:
+    v:
+    b:
+    n:
+    m: 'return'
+    comma:
+    period:
+    slash:
+    right_shift: right_shift
+
+    # Row 5
+    # fn:
+    left_control:
+    left_alt:
+    left_command:
+    spacebar: ' '
+    right_command:
+    right_alt:
+    left_arrow: left_arrow
+    up_arrow: up_arrow
+    down_arrow: down_arrow
+    right_arrow: right_arrow
+
+
+numbers:
+  triggerKeys: [grave_accent_and_tilde]
+  mapping:
+    escape: 'escape'
+    f1:
+    f2:
+    f3:
+    f4:
+    f5:
+    f6:
+    f7:
+    f8:
+    f9:
+    f10:
+    f11:
+    f12:
+    power:
+
+    # Row 1
+    non_us_backslash: left_shift
+    1: left_control
+    2: left_command
+    3: left_option
+    4:
+    5:
+    6:
+    7:
+    8:
+    9: left_option
+    0: left_command
+    hyphen: left_control
+    equal_sign: left_shift
+    delete_or_backspace: 'backspace'
+
+    # Row 2
+    tab:
+    q:
+    w:
+    e:
+    r:
+    t:
+    y:
+    u: '7'
+    i: '8'
+    o: '9'
+    p:
+    open_bracket:
+    close_bracket:
+    return_or_enter: 'return'
+
+    # Row 3
+    caps_lock:
+    a:
+    s:
+    d:
+    f:
+    g:
+    h:
+    j: '4'
+    k: '5'
+    l: '6'
+    semicolon:
+    quote:
+    backslash:
+
+    # Row 4
+    left_shift: right_shift
+    grave_accent_and_tilde:
+    z:
+    x:
+    c:
+    v:
+    b:
+    n:
+    m: '1'
+    comma: '2'
+    period: '3'
+    slash:
+    right_shift: right_shift
+
+    # Row 5
+    # fn:
+    left_control:
+    left_alt:
+    left_command:
+    spacebar: '0'
+    right_command:
+    right_alt:
+    left_arrow: left_arrow
+    up_arrow: up_arrow
+    down_arrow: down_arrow
+    right_arrow: right_arrow

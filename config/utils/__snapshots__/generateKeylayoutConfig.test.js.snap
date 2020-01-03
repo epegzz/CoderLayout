@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`generateKeylayoutConfig works 1`] = `
+Array [
+  Object {
+    "encodedOutput": "&#x0061;",
+    "output": "a",
+    "virtualKeyCode": 100,
+    "virtualKeyName": "x",
+  },
+  Object {
+    "encodedOutput": "&#x0041;",
+    "output": "A",
+    "shift": true,
+    "virtualKeyCode": 100,
+    "virtualKeyName": "x",
+  },
+  Object {
+    "encodedOutput": "&#x0062;",
+    "output": "b",
+    "virtualKeyCode": 101,
+    "virtualKeyName": "y",
+  },
+  Object {
+    "encodedOutput": "&#x0042;",
+    "output": "B",
+    "shift": true,
+    "virtualKeyCode": 101,
+    "virtualKeyName": "y",
+  },
+  Object {
+    "encodedOutput": "&#x000D;",
+    "output": "return",
+    "virtualKeyCode": 103,
+    "virtualKeyName": "return_or_enter",
+  },
+  Object {
+    "encodedOutput": "&#x000D;",
+    "output": undefined,
+    "shift": true,
+    "virtualKeyCode": 103,
+    "virtualKeyName": "return_or_enter",
+  },
+]
+`;

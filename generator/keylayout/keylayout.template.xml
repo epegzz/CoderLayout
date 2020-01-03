@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE keyboard SYSTEM "file://localhost/System/Library/DTDs/KeyboardLayout.dtd">
+<!--Generated on Sun, Dec 1, 2019 1:09 AM-->
+<keyboard group="126" id="{id}" name="CoderLayout ({date})" maxout="5">
+  <layouts>
+    <layout first="0" last="0" modifiers="Modifiers" mapSet="ANSI"/>
+  </layouts>
+
+  <modifierMap id="Modifiers" defaultIndex="0">
+    <keyMapSelect mapIndex="0">
+      <modifier keys=""/>
+    </keyMapSelect>
+    <keyMapSelect mapIndex="1">
+      <modifier keys="anyShift"/>
+    </keyMapSelect>
+  </modifierMap>
+
+  <keyMapSet id="ANSI">
+    <keyMap index="0">
+      {baseKeys}
+    </keyMap>
+    <keyMap index="1">
+      {shiftKeys}
+    </keyMap>
+  </keyMapSet>
+</keyboard>

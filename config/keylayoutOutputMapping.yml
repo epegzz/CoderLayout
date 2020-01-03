@@ -1,0 +1,132 @@
+# In this file we are mapping output characters to virtual key codes.
+# The format is:
+#
+#      <virtualKeyCode>: [<output, shiftOutput>]
+#
+# The `output` or `shiftOutput` (output when shift key is pressed) can
+# either be a unicode character, a string or any of the keys from the
+# file `keylayoutOutputAliases`
+
+# The first section contains mappings for keys that should be
+# typeable without Karabiner-Elements enabled. Those are basically
+# all numbers and letters visible on the keyboard.
+##################################################################
+
+# fn Row
+escape: 'escape'
+
+# Row 1
+1: ['1', '!']
+2: ['2', '"']
+3: ['3', '€']
+4: ['4', '$']
+5: ['5', '%']
+6: ['6', '&']
+7: ['7', '/']
+8: ['8', '(']
+9: ['9', ')']
+0: ['0', '=']
+delete_or_backspace: 'backspace'
+
+# Row 2
+tab: ['tab', 'tabLeft']
+q: ['j', 'J']
+w: ['d', 'D']
+e: ['u', 'U']
+r: ['a', 'A']
+t: ['x', 'X']
+y: ['p', 'P']
+u: ['h', 'H']
+i: ['l', 'L']
+o: ['m', 'M']
+p: ['w', 'W']
+open_bracket: ['q', 'Q']
+close_bracket: ['ß', '?']
+return_or_enter: 'return'
+
+# Row 3
+a: ['c', 'C']
+s: ['t', 'T']
+d: ['i', 'I']
+f: ['e', 'E']
+g: ['o', 'O']
+h: ['b', 'B']
+j: ['n', 'N']
+k: ['r', 'R']
+l: ['s', 'S']
+semicolon: ['g', 'G']
+
+# Row 4
+z: ['f', 'F']
+x: ['v', 'V']
+c: ['ü', 'Ü']
+v: ['ä', 'Ä']
+b: ['ö', 'Ö']
+n: ['y', 'Y']
+m: ['z', 'Z']
+comma: [',', ';']
+period: ['.', ':']
+slash: ['k', 'K']
+
+# Row 5
+spacebar: ' '
+left_arrow: 'left'
+up_arrow: 'up'
+down_arrow: 'down'
+right_arrow: 'right'
+
+
+# The second section maps any remaining character to a key code.
+# It does not really matter which key code we use for those characters,
+# as we will use karabiner to produce the correct key codes when typing.
+########################################################################
+
+non_us_backslash: ['^', '°']
+equal_sign: ['…', '_']
+grave_accent_and_tilde: ['[', '<']
+backslash: [']', '>']
+hyphen: ['{', '']
+quote: ['}', '']
+
+keypad_slash: ['*', '-']
+keypad_asterisk: ['#', '|']
+keypad_hyphen: ['~', '`']
+keypad_plus: ['+', "'"]
+keypad_enter: ['@', '\']
+keypad_0: ['', '']
+keypad_1: ['', '']
+keypad_2: ['', '']
+keypad_3: ['', '']
+keypad_4: ['', '']
+keypad_5: ['', '']
+keypad_6: ['', '']
+keypad_7: ['', '']
+keypad_8: ['', '']
+keypad_9: ['', '']
+keypad_period: ['', '']
+keypad_equal_sign: ['', '']
+keypad_comma: ['', '']
+delete_forward: 'delete'
+page_up: ['', '']
+page_down: ['', '']
+home: ['', '']
+end: ['', '']
+f1: ['', '']
+f2: ['', '']
+f3: ['', '']
+f4: ['', '']
+f5: ['', '']
+f6: ['', '']
+f7: ['', '']
+f8: ['', '']
+f9: ['', '']
+f10: ['', '']
+f11: ['', '']
+f12: ['', '']
+f13: ['', '']
+f14: ['', '']
+f15: ['', '']
+f16: ['', '']
+f17: ['', '']
+f18: ['', '']
+f19: ['', '']

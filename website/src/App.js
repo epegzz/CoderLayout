@@ -390,7 +390,7 @@ class App extends Component {
             QWERTZ
           </h1>
           <Keyboard
-            formatLabel={formatLabelForNavigationLayer([3 ])}
+            formatLabel={formatLabelForNavigationLayer([3])}
             keys={qwertyKeys}
             disableKeysWithoutLabels
           />

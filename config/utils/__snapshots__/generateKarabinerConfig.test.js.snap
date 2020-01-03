@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`generateKarabinerConfig works 1`] = `
+Object {
+  "layers": Object {
+    "layer0": Object {
+      "mapping": Array [
+        Object {
+          "from": "a",
+          "to": Object {
+            "keyName": "left_control",
+            "modifiers": Array [],
+          },
+        },
+      ],
+      "triggerKeys": Array [
+        "keypad_plus",
+        "keypad_minus",
+      ],
+    },
+    "layer1": Object {
+      "mapping": Array [
+        Object {
+          "from": "x",
+          "to": Object {
+            "keyName": "n",
+            "modifiers": Array [],
+            "output": "1",
+          },
+        },
+        Object {
+          "from": "y",
+          "to": Object {
+            "keyName": "n",
+            "modifiers": Array [
+              "shift",
+            ],
+            "output": "2",
+          },
+        },
+        Object {
+          "from": "z",
+          "to": Object {
+            "keyName": "m",
+            "modifiers": Array [
+              "left_command",
+            ],
+            "output": "3",
+          },
+        },
+      ],
+      "triggerKeys": Array [
+        Array [
+          "keypad_plus",
+          "keypad_minus",
+        ],
+      ],
+    },
+    "layer2": Object {
+      "mapping": Array [
+        Object {
+          "from": "a",
+          "to": Object {
+            "keyName": "left_control",
+            "modifiers": Array [],
+          },
+        },
+      ],
+      "triggerKeys": undefined,
+    },
+  },
+  "triggerKeys": Array [
+    "keypad_plus",
+    "keypad_minus",
+  ],
+  "triggerVariables": Array [
+    "trigger_spacebar",
+  ],
+}
+`;
