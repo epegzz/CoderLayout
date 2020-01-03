@@ -1,8 +1,10 @@
 # CoderLayout
 
-A keyboard layout specially designed for ~~coders~~ myself.
+#### A keyboard layout specially designed for ~~coders~~ myself.
 
-I'll add some more details here when I find the time 😅
+I started setting up a website that will explain the details: http://www.coderlayout.com
+
+For now it does not explain much I suppose, but I'll add some more info when I find the time 😅
 
 ## Installation
 

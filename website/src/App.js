@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import styled from 'styled-components'
 import './App.css';
 import Keyboard from './Keyboard/Keyboard'
-import styled from 'styled-components'
+import GithubRibbon from './GithubRibbon'
 
 const coderLayoutKeys = [
   // fn row
@@ -343,6 +344,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <GithubRibbon href={'https://github.com/epegzz/CoderLayout'} />
         <Section theme={'header'}>
           <h1>
             CoderLayout
