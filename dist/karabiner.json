@@ -13964,7 +13964,14 @@
                                         ]
                                     }
                                 },
-                                "to": [],
+                                "to": [
+                                    {
+                                        "key_code": "tab",
+                                        "modifiers": [
+                                            "shift"
+                                        ]
+                                    }
+                                ],
                                 "to_if_alone": [],
                                 "to_after_key_up": [],
                                 "conditions": [
@@ -14006,7 +14013,12 @@
                                         ]
                                     }
                                 },
-                                "to": [],
+                                "to": [
+                                    {
+                                        "key_code": "tab",
+                                        "modifiers": []
+                                    }
+                                ],
                                 "to_if_alone": [],
                                 "to_after_key_up": [],
                                 "conditions": [

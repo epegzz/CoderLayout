@@ -313,7 +313,9 @@ navigation:
     # Row 2
     tab:
     q:
-    w:
+      output: 'tab'
+      modifiers: ['shift']
+    w: 'tab'
     e:
     r:
     t:

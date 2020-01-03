@@ -29,7 +29,7 @@ escape: 'escape'
 delete_or_backspace: 'backspace'
 
 # Row 2
-tab: ['tab', 'tabLeft']
+tab: ['tab']
 q: ['j', 'J']
 w: ['d', 'D']
 e: ['u', 'U']
