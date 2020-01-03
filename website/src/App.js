@@ -315,9 +315,9 @@ const formatLabelForNavigationLayer = (mods) => ({ label, mod }) => {
 }
 
 const sectionBackgroundColors = {
-  header: '#282c34',
-  coding: '#28342f',
-  navigation: '#28342f'
+  header: 'linear-gradient(hsla(155, 13%, 21%, 1), hsla(155, 13%, 17%, 1));',
+  coding: 'linear-gradient(hsla(155, 13%, 21%, 1), hsla(155, 13%, 17%, 1));',
+  navigation: 'linear-gradient(hsla(155, 13%, 21%, 1), hsla(155, 13%, 17%, 1));'
 }
 const sectionTextColors = {
   header: 'white',
@@ -331,7 +331,7 @@ const Section = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color:  ${({ theme }) => sectionBackgroundColors[theme] };
+  background:  ${({ theme }) => sectionBackgroundColors[theme] };
   color: ${({ theme }) => sectionTextColors[theme] };
 
   h1 {
