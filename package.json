@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "A Keyboard Layout for Coders",
   "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
   "scripts": {
     "test": "jest ./**/*.test.js",
     "generate:karabiner": "node generator/karabiner",
