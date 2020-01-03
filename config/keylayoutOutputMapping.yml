@@ -69,6 +69,7 @@ period: ['.', ':']
 slash: ['k', 'K']
 
 # Row 5
+fn: 'fn'
 spacebar: ' '
 left_arrow: 'left'
 up_arrow: 'up'
@@ -90,10 +91,10 @@ quote: ['}', '']
 
 keypad_slash: ['*', '-']
 keypad_asterisk: ['#', '|']
-keypad_hyphen: ['~', '`']
+keypad_hyphen: ['~', '']
 keypad_plus: ['+', "'"]
 keypad_enter: ['@', '\']
-keypad_0: ['', '']
+keypad_0: ['`', '']
 keypad_1: ['', '']
 keypad_2: ['', '']
 keypad_3: ['', '']
@@ -111,18 +112,18 @@ page_up: ['', '']
 page_down: ['', '']
 home: ['', '']
 end: ['', '']
-f1: ['', '']
-f2: ['', '']
-f3: ['', '']
-f4: ['', '']
-f5: ['', '']
-f6: ['', '']
-f7: ['', '']
-f8: ['', '']
-f9: ['', '']
-f10: ['', '']
-f11: ['', '']
-f12: ['', '']
+f1: 'f1'
+f2: 'f2'
+f3: 'f3'
+f4: 'f4'
+f5: 'f5'
+f6: 'f6'
+f7: 'f7'
+f8: 'f8'
+f9: 'f9'
+f10: 'f10'
+f11: 'f11'
+f12: 'f12'
 f13: ['', '']
 f14: ['', '']
 f15: ['', '']

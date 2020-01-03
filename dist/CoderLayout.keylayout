@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE keyboard SYSTEM "file://localhost/System/Library/DTDs/KeyboardLayout.dtd">
 <!--Generated on Sun, Dec 1, 2019 1:09 AM-->
-<keyboard group="126" id="-5005" name="CoderLayout (Fri, Jan 3, 2020 6:30 PM)" maxout="5">
+<keyboard group="126" id="-7850" name="CoderLayout (Fri, Jan 3, 2020 7:39 PM)" maxout="5">
     <layouts>
         <layout first="0" last="0" modifiers="Modifiers" mapSet="ANSI"/>
     </layouts>
@@ -61,6 +61,7 @@
             <key code="43" output="&#x002C;" />
             <key code="47" output="&#x002E;" />
             <key code="44" output="&#x006B;" />
+            <key code="63" output="&#x0066;&#x006E;" />
             <key code="49" output="&#x0020;" />
             <key code="123" output="&#xF702;" />
             <key code="126" output="&#xF700;" />
@@ -77,7 +78,20 @@
             <key code="78" output="&#x007E;" />
             <key code="69" output="&#x002B;" />
             <key code="76" output="&#x0040;" />
+            <key code="82" output="&#x0060;" />
             <key code="117" output="&#xF728;" />
+            <key code="122" output="&#xF704;" />
+            <key code="120" output="&#xF705;" />
+            <key code="99" output="&#xF706;" />
+            <key code="118" output="&#xF707;" />
+            <key code="96" output="&#xF708;" />
+            <key code="97" output="&#xF709;" />
+            <key code="98" output="&#xF70A;" />
+            <key code="100" output="&#xF70B;" />
+            <key code="101" output="&#xF70C;" />
+            <key code="109" output="&#xF70D;" />
+            <key code="103" output="&#xF70E;" />
+            <key code="111" output="&#xF70F;" />
         </keyMap>
         <keyMap index="1">
             <key code="29" output="&#x003D;" />
@@ -126,6 +140,7 @@
             <key code="43" output="&#x003B;" />
             <key code="47" output="&#x003A;" />
             <key code="44" output="&#x004B;" />
+            <key code="63" output="&#x0066;&#x006E;" />
             <key code="49" output="&#x0020;" />
             <key code="123" output="&#xF702;" />
             <key code="126" output="&#xF700;" />
@@ -139,10 +154,23 @@
             <key code="39" output="&#x007D;" />
             <key code="75" output="&#x002D;" />
             <key code="67" output="&#x007C;" />
-            <key code="78" output="&#x0060;" />
+            <key code="78" output="&#x007E;" />
             <key code="69" output="&#x0027;" />
             <key code="76" output="&#x005C;" />
+            <key code="82" output="&#x0060;" />
             <key code="117" output="&#xF728;" />
+            <key code="122" output="&#xF704;" />
+            <key code="120" output="&#xF705;" />
+            <key code="99" output="&#xF706;" />
+            <key code="118" output="&#xF707;" />
+            <key code="96" output="&#xF708;" />
+            <key code="97" output="&#xF709;" />
+            <key code="98" output="&#xF70A;" />
+            <key code="100" output="&#xF70B;" />
+            <key code="101" output="&#xF70C;" />
+            <key code="109" output="&#xF70D;" />
+            <key code="103" output="&#xF70E;" />
+            <key code="111" output="&#xF70F;" />
         </keyMap>
     </keyMapSet>
 </keyboard>

@@ -21,6 +21,8 @@ base:
     2: left_command
     3: left_option
     4:
+      output: 'tab'
+      modifiers: ['command']
     5:
     6:
     7:
@@ -109,19 +111,25 @@ shift:
     power:
 
     # Row 1
-    non_us_backslash: left_shift
-    1: left_control
-    2: left_command
-    3: left_option
+    non_us_backslash:
+    1:
+    2:
+    3:
+      # Window switching: previous window
+      output: '`'
+      modifiers: ['command', 'shift']
     4:
+      # Window switching: next window
+      output: '`'
+      modifiers: ['command']
     5:
     6:
     7:
     8:
-    9: left_option
-    0: left_command
-    hyphen: left_control
-    equal_sign: left_shift
+    9:
+    0:
+    hyphen:
+    equal_sign:
     delete_or_backspace: 'backspace'
 
     # Row 2
@@ -207,6 +215,8 @@ coding:
     2: left_command
     3: left_option
     4:
+      output: 'tab'
+      modifiers: ['command']
     5:
     6:
     7:
@@ -300,6 +310,8 @@ navigation:
     2: left_command
     3: left_option
     4:
+      output: 'tab'
+      modifiers: ['command']
     5:
     6:
     7:
@@ -399,6 +411,8 @@ navigation_plus:
     2: left_command
     3: left_option
     4:
+      output: 'tab'
+      modifiers: ['command']
     5:
     6:
     7:
@@ -505,6 +519,8 @@ numbers:
     2: left_command
     3: left_option
     4:
+      output: 'tab'
+      modifiers: ['command']
     5:
     6:
     7:
@@ -567,6 +583,225 @@ numbers:
     left_alt:
     left_command:
     spacebar: '0'
+    right_command:
+    right_alt:
+    left_arrow: left_arrow
+    up_arrow: up_arrow
+    down_arrow: down_arrow
+    right_arrow: right_arrow
+
+app_switching:
+  triggerKeys: ['4']
+  mapping:
+    escape: 'escape'
+    f1:
+    f2:
+    f3:
+    f4:
+    f5:
+    f6:
+    f7:
+    f8:
+    f9:
+    f10:
+    f11:
+    f12:
+    power:
+
+    # Row 1
+    non_us_backslash:
+    1:
+    2:
+    3:
+      # previous app
+      output: 'tab'
+      modifiers: ['command', 'shift']
+    4:
+    5:
+    6:
+    7:
+    8:
+    9:
+    0:
+    hyphen:
+    equal_sign:
+    delete_or_backspace:
+
+    # Row 2
+    tab:
+    q:
+    w:
+    e:
+    r:
+      # next app
+      output: 'tab'
+      modifiers: ['command']
+    t:
+    y:
+    u:
+      # Move focus to the menu bar
+      output: 'f2'
+      modifiers: ['control', 'fn']
+    i:
+    o:
+      # Move focus to the status menus
+      output: 'f8'
+      modifiers: ['control', 'fn']
+    p:
+    open_bracket:
+    close_bracket:
+    return_or_enter:
+
+    # Row 3
+    caps_lock:
+    a:
+    s:
+    d:
+    f:
+    g:
+    h:
+    j:
+    k:
+    l:
+    semicolon:
+    quote:
+    backslash:
+
+    # Row 4
+    left_shift:
+    grave_accent_and_tilde:
+    z:
+    x:
+    c:
+    v:
+    b:
+    n:
+    m:
+    comma:
+    period:
+    slash:
+    right_shift:
+
+    # Row 5
+    # fn:
+    left_control:
+    left_alt:
+    left_command: 'escape'
+    spacebar: 'escape'
+    right_command:
+    right_alt:
+    left_arrow: left_arrow
+    up_arrow: up_arrow
+    down_arrow: down_arrow
+    right_arrow: right_arrow
+
+editing:
+  triggerKeys: ['tab']
+  mapping:
+    escape: 'escape'
+    f1:
+    f2:
+    f3:
+    f4:
+    f5:
+    f6:
+    f7:
+    f8:
+    f9:
+    f10:
+    f11:
+    f12:
+    power:
+
+    # Row 1
+    non_us_backslash:
+    1:
+    2:
+    3:
+    4:
+    5:
+    6:
+    7:
+    8:
+    9:
+    0:
+    hyphen:
+    equal_sign:
+    delete_or_backspace:
+
+    # Row 2
+    tab:
+    q:
+    w:
+      # editing: copy
+      output: 'c'
+      modifiers: ['command']
+    e:
+      # editing: cut
+      output: 'x'
+      modifiers: ['command']
+    r:
+    t:
+    y:
+    u:
+    i:
+      # IntelliJ: move selection up
+      output: 'up'
+      modifiers: ['command']
+    o:
+    p:
+    open_bracket:
+    close_bracket:
+    return_or_enter:
+
+    # Row 3
+    caps_lock:
+    a:
+    s:
+    d:
+    f:
+      # editing: paste
+      output: 'v'
+      modifiers: ['command']
+    g:
+    h:
+      # IntelliJ: move selection left
+      output: 'left'
+      modifiers: ['command']
+    j:
+      # IntelliJ: move selection down
+      output: 'down'
+      modifiers: ['command']
+    k:
+      # IntelliJ: move selection right
+      output: 'right'
+      modifiers: ['command']
+    l:
+    semicolon:
+    quote:
+    backslash:
+
+    # Row 4
+    left_shift:
+    grave_accent_and_tilde:
+    z:
+    x:
+    c:
+    v:
+    b:
+    n:
+    m:
+    comma:
+    period:
+    slash:
+    right_shift:
+
+    # Row 5
+    # fn:
+    left_control:
+    left_alt:
+    left_command: 'escape'
+    spacebar: 'escape'
     right_command:
     right_alt:
     left_arrow: left_arrow
