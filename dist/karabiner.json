@@ -21690,7 +21690,14 @@
                                         ]
                                     }
                                 },
-                                "to": [],
+                                "to": [
+                                    {
+                                        "key_code": "delete_or_backspace",
+                                        "modifiers": [
+                                            "command"
+                                        ]
+                                    }
+                                ],
                                 "to_if_alone": [],
                                 "to_after_key_up": [],
                                 "conditions": [
@@ -21742,7 +21749,14 @@
                                         ]
                                     }
                                 },
-                                "to": [],
+                                "to": [
+                                    {
+                                        "key_code": "delete_or_backspace",
+                                        "modifiers": [
+                                            "option"
+                                        ]
+                                    }
+                                ],
                                 "to_if_alone": [],
                                 "to_after_key_up": [],
                                 "conditions": [
@@ -21853,7 +21867,14 @@
                                         ]
                                     }
                                 },
-                                "to": [],
+                                "to": [
+                                    {
+                                        "key_code": "delete_forward",
+                                        "modifiers": [
+                                            "option"
+                                        ]
+                                    }
+                                ],
                                 "to_if_alone": [],
                                 "to_after_key_up": [],
                                 "conditions": [
@@ -21905,7 +21926,14 @@
                                         ]
                                     }
                                 },
-                                "to": [],
+                                "to": [
+                                    {
+                                        "key_code": "delete_forward",
+                                        "modifiers": [
+                                            "command"
+                                        ]
+                                    }
+                                ],
                                 "to_if_alone": [],
                                 "to_after_key_up": [],
                                 "conditions": [

@@ -432,10 +432,14 @@ navigation_plus:
     t:
     y:
     u:
+      output: 'backspace'
+      modifiers: ['option']
     i:
       output: 'up'
       modifiers: ['option']
     o:
+      output: 'delete'
+      modifiers: ['option']
     p:
     open_bracket:
     close_bracket:
@@ -493,7 +497,6 @@ navigation_plus:
     up_arrow: up_arrow
     down_arrow: down_arrow
     right_arrow: right_arrow
-
 
 numbers:
   triggerKeys: [grave_accent_and_tilde]
