@@ -34377,7 +34377,14 @@
                                         ]
                                     }
                                 },
-                                "to": [],
+                                "to": [
+                                    {
+                                        "key_code": "r",
+                                        "modifiers": [
+                                            "command"
+                                        ]
+                                    }
+                                ],
                                 "to_if_alone": [],
                                 "to_after_key_up": [],
                                 "conditions": [

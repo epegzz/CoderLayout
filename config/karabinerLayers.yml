@@ -741,6 +741,9 @@ editing:
       output: 'x'
       modifiers: ['command']
     r:
+      # editing: select all
+      output: 'a'
+      modifiers: ['command']
     t:
     y:
     u:
