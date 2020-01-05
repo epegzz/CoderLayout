@@ -7,7 +7,7 @@
     "doc": "docs"
   },
   "scripts": {
-    "test": "jest ./**/*.test.js",
+    "test": "jest \"(generator|config)/.*\\.test\\.js$\"",
     "generate:karabiner": "node generator/karabiner",
     "generate:keylayout": "node generator/keylayout",
     "generate:icns": "./generator/keylayout/generate-icns.sh resources/icns.png dist/CoderLayout"

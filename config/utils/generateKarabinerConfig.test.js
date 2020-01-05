@@ -15,7 +15,7 @@ describe('generateKarabinerConfig', () => {
         triggerKeys: [['keypad_plus', 'keypad_minus']],
         mapping: {
           x: '1',
-          y: { output: '2' },
+          y: ['2', { output: '2' }],
           z: { output: '3', modifiers: ['left_command'] }
         }
       },

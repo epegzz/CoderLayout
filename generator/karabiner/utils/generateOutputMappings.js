@@ -1,4 +1,4 @@
-const { without, flatten } = require('lodash')
+const { without, flatten, compact } = require('lodash')
 
 function generateOutputMappings(karabinerConfig) {
   const rules = []
@@ -28,7 +28,7 @@ function generateOutputMappings(karabinerConfig) {
 }
 
 function generateAndAppendManipulators({ mapping, allTriggerKeys, triggerCombo = [], manipulators }) {
-  for (const {from, to} of mapping) {
+  for (const { from, to: toEntries = []} of mapping) {
     const fromIsTriggerKey = allTriggerKeys.includes(from)
     const manipulator = {
       type: 'basic',
@@ -45,10 +45,10 @@ function generateAndAppendManipulators({ mapping, allTriggerKeys, triggerCombo =
       conditions: [],
     }
 
-    if (to) {
+    for (const toEntry of compact(toEntries)) {
       manipulator[fromIsTriggerKey ? 'to_if_alone' : 'to'].push({
-        key_code: to.keyName,
-        modifiers: to.modifiers,
+        key_code: toEntry.keyName,
+        modifiers: toEntry.modifiers,
       })
     }
 
@@ -90,7 +90,8 @@ function generateAndAppendManipulators({ mapping, allTriggerKeys, triggerCombo =
     const isUsefulMapping =
       !manipulator.to.length ||
       fromIsTriggerKey ||
-      to && from !== to.keyName ||
+      toEntries.length > 1 ||
+      (toEntries.length > 0 && toEntries[0].from !== toEntries[0].keyName) ||
       triggerCombo.length
 
     if (isUsefulMapping) {

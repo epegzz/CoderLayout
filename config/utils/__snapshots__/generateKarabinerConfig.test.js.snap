@@ -7,10 +7,12 @@ Object {
       "mapping": Array [
         Object {
           "from": "a",
-          "to": Object {
-            "keyName": "left_control",
-            "modifiers": Array [],
-          },
+          "to": Array [
+            Object {
+              "keyName": "left_control",
+              "modifiers": Array [],
+            },
+          ],
         },
       ],
       "triggerKeys": Array [
@@ -22,31 +24,44 @@ Object {
       "mapping": Array [
         Object {
           "from": "x",
-          "to": Object {
-            "keyName": "n",
-            "modifiers": Array [],
-            "output": "1",
-          },
+          "to": Array [
+            Object {
+              "keyName": "n",
+              "modifiers": Array [],
+              "output": "1",
+            },
+          ],
         },
         Object {
           "from": "y",
-          "to": Object {
-            "keyName": "n",
-            "modifiers": Array [
-              "shift",
-            ],
-            "output": "2",
-          },
+          "to": Array [
+            Object {
+              "keyName": "n",
+              "modifiers": Array [
+                "shift",
+              ],
+              "output": "2",
+            },
+            Object {
+              "keyName": "n",
+              "modifiers": Array [
+                "shift",
+              ],
+              "output": "2",
+            },
+          ],
         },
         Object {
           "from": "z",
-          "to": Object {
-            "keyName": "m",
-            "modifiers": Array [
-              "left_command",
-            ],
-            "output": "3",
-          },
+          "to": Array [
+            Object {
+              "keyName": "m",
+              "modifiers": Array [
+                "left_command",
+              ],
+              "output": "3",
+            },
+          ],
         },
       ],
       "triggerKeys": Array [
@@ -60,10 +75,12 @@ Object {
       "mapping": Array [
         Object {
           "from": "a",
-          "to": Object {
-            "keyName": "left_control",
-            "modifiers": Array [],
-          },
+          "to": Array [
+            Object {
+              "keyName": "left_control",
+              "modifiers": Array [],
+            },
+          ],
         },
       ],
       "triggerKeys": undefined,

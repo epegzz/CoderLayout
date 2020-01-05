@@ -315,6 +315,12 @@ Array [
             "key_code": "b",
             "modifiers": Array [],
           },
+          Object {
+            "key_code": "b",
+            "modifiers": Array [
+              "shift",
+            ],
+          },
         ],
         "to_after_key_up": Array [],
         "to_if_alone": Array [],

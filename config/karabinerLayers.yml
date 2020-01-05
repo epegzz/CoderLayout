@@ -746,11 +746,15 @@ editing:
     t:
     y:
     u:
+      output: 'backspace'
+      modifiers: ['command']
     i:
       # IntelliJ: move selection up
       output: 'up'
       modifiers: ['control', 'option']
     o:
+      output: 'delete'
+      modifiers: ['command']
     p:
     open_bracket:
     close_bracket:

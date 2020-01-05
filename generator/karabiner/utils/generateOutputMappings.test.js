@@ -9,14 +9,14 @@ describe('generateOutputMappings', () => {
           // 'x' or 'y'
           triggerKeys: ['x', 'y'],
           mapping: [
-            { from: 'a', to: { keyName: 'b', modifiers: []} }
+            { from: 'a', to: [{ keyName: 'b', modifiers: []}] }
           ]
         },
         layer2: {
           // 'v' and 'w'
           triggerKeys: [['v', 'w']],
           mapping: [
-            { from: 'c', to: { keyName: 'd', modifiers: []} }
+            { from: 'c', to: [{ keyName: 'd', modifiers: []}] }
           ]
         }
       }
@@ -30,7 +30,10 @@ describe('generateOutputMappings', () => {
       layers: {
         layer1: {
           mapping: [
-            { from: 'a', to: { keyName: 'b', modifiers: []} }
+            { from: 'a', to: [
+              { keyName: 'b', modifiers: []},
+              { keyName: 'b', modifiers: ['shift']}
+            ] }
           ]
         }
       }
@@ -44,7 +47,7 @@ describe('generateOutputMappings', () => {
       layers: {
         layer1: {
           mapping: [
-            { from: 'a', to: { keyName: 'b', modifiers: ['left_command']} }
+            { from: 'a', to: [{ keyName: 'b', modifiers: ['left_command']}] }
           ]
         }
       }
@@ -58,7 +61,7 @@ describe('generateOutputMappings', () => {
       layers: {
         layer1: {
           mapping: [
-            { from: 'a', to: null }
+            { from: 'a', to: [] }
           ]
         }
       }
@@ -72,10 +75,10 @@ describe('generateOutputMappings', () => {
       layers: {
         layer1: {
           mapping: [
-            { from: 'a', to: { keyName: 'left_shift', modifiers: []} },
-            { from: 'b', to: { keyName: 'left_control', modifiers: []} },
-            { from: 'c', to: { keyName: 'left_command', modifiers: []} },
-            { from: 'd', to: { keyName: 'left_option', modifiers: []} },
+            { from: 'a', to: [{ keyName: 'left_shift', modifiers: []}] },
+            { from: 'b', to: [{ keyName: 'left_control', modifiers: []}] },
+            { from: 'c', to: [{ keyName: 'left_command', modifiers: []}] },
+            { from: 'd', to: [{ keyName: 'left_option', modifiers: []}] },
           ]
         }
       }

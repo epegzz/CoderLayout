@@ -9,17 +9,17 @@ const { uniq, compact } = require('lodash')
  *      mapping: [
  *        {
  *          from: 'a',
- *          to: {
+ *          to: [{
  *            keyName: 'b',
  *            modifiers: ['shift', 'command']
- *          }
+ *          }]
  *        },
  *        {
  *          from: 'x',
- *          to: {
+ *          to: [{
  *            keyName: 'y',
  *            modifiers: []
- *          }
+ *          }]
  *        },
  *        ...
  *      ]
@@ -42,35 +42,44 @@ function generateKarabinerConfig ({
       mapping: []
     }
 
-    for (let [from, to] of Object.entries(layer.mapping)) {
-      if (to && typeof to !== 'object') {
-        const isKeylayoutOutput =
-          !to.endsWith('arrow') &&
-          !to.endsWith('shift') &&
-          !to.endsWith('control') &&
-          !to.endsWith('command') &&
-          !to.endsWith('option')
+    for (let [from, rawToEntries = []] of Object.entries(layer.mapping)) {
+      const toEntries = []
 
-        to = isKeylayoutOutput
-          ? { output: to }
-          : { keyName: to}
+      if (!Array.isArray(rawToEntries)) {
+        rawToEntries = [rawToEntries]
       }
+      for (let toEntry of rawToEntries) {
+        if (toEntry && typeof toEntry !== 'object') {
+          const isKeylayoutOutput =
+            !toEntry.endsWith('arrow') &&
+            !toEntry.endsWith('shift') &&
+            !toEntry.endsWith('control') &&
+            !toEntry.endsWith('command') &&
+            !toEntry.endsWith('option')
 
-      if (to && !to.modifiers) {
-        to.modifiers = []
-      }
-
-      if (to && to.output && !to.keyName) {
-        const keyLayoutMapping = keylayoutConfig.find(entry => entry.output === to.output)
-        if (!keyLayoutMapping) {
-          throw new Error(`Missing keylayout entry for "${to.output}"`)
+          toEntry = isKeylayoutOutput
+            ? { output: toEntry }
+            : { keyName: toEntry}
         }
-        if (keyLayoutMapping.shift) {
-          to.modifiers.push('shift')
+
+        if (toEntry && !toEntry.modifiers) {
+          toEntry.modifiers = []
         }
-        to.keyName = keyLayoutMapping.virtualKeyName
+
+        if (toEntry && toEntry.output && !toEntry.keyName) {
+          const keyLayoutMapping = keylayoutConfig.find(entry => entry.output === toEntry.output)
+          if (!keyLayoutMapping) {
+            throw new Error(`Missing keylayout entry for "${toEntry.output}"`)
+          }
+          if (keyLayoutMapping.shift) {
+            toEntry.modifiers.push('shift')
+          }
+          toEntry.keyName = keyLayoutMapping.virtualKeyName
+        }
+        toEntries.push(toEntry)
       }
-      result.layers[layerName].mapping.push({ from, to })
+
+      result.layers[layerName].mapping.push({ from, to: toEntries })
     }
   }
 
