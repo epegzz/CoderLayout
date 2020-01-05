@@ -108,8 +108,8 @@ keypad_period: ['', '']
 keypad_equal_sign: ['', '']
 keypad_comma: ['', '']
 delete_forward: 'delete'
-page_up: ['', '']
-page_down: ['', '']
+page_up: 'pageUp'
+page_down: 'pageDown'
 home: ['', '']
 end: ['', '']
 f1: 'f1'

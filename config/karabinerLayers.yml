@@ -434,9 +434,7 @@ navigation_plus:
     u:
       output: 'backspace'
       modifiers: ['option']
-    i:
-      output: 'up'
-      modifiers: ['option']
+    i: 'pageUp'
     o:
       output: 'delete'
       modifiers: ['option']
@@ -458,9 +456,7 @@ navigation_plus:
     j:
       output: 'left'
       modifiers: ['option']
-    k:
-      output: 'down'
-      modifiers: ['option']
+    k: 'pageDown'
     l:
       output: 'right'
       modifiers: ['option']

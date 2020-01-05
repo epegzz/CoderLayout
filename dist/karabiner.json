@@ -21803,10 +21803,8 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "up_arrow",
-                                        "modifiers": [
-                                            "option"
-                                        ]
+                                        "key_code": "page_up",
+                                        "modifiers": []
                                     }
                                 ],
                                 "to_if_alone": [],
@@ -22578,10 +22576,8 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "down_arrow",
-                                        "modifiers": [
-                                            "option"
-                                        ]
+                                        "key_code": "page_down",
+                                        "modifiers": []
                                     }
                                 ],
                                 "to_if_alone": [],
