@@ -21690,14 +21690,7 @@
                                         ]
                                     }
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "delete_or_backspace",
-                                        "modifiers": [
-                                            "command"
-                                        ]
-                                    }
-                                ],
+                                "to": [],
                                 "to_if_alone": [],
                                 "to_after_key_up": [],
                                 "conditions": [
@@ -21926,14 +21919,7 @@
                                         ]
                                     }
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "delete_forward",
-                                        "modifiers": [
-                                            "command"
-                                        ]
-                                    }
-                                ],
+                                "to": [],
                                 "to_if_alone": [],
                                 "to_after_key_up": [],
                                 "conditions": [
@@ -34624,7 +34610,8 @@
                                     {
                                         "key_code": "up_arrow",
                                         "modifiers": [
-                                            "command"
+                                            "control",
+                                            "option"
                                         ]
                                     }
                                 ],
@@ -35272,14 +35259,7 @@
                                         ]
                                     }
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "left_arrow",
-                                        "modifiers": [
-                                            "command"
-                                        ]
-                                    }
-                                ],
+                                "to": [],
                                 "to_if_alone": [],
                                 "to_after_key_up": [],
                                 "conditions": [
@@ -35333,9 +35313,10 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "down_arrow",
+                                        "key_code": "left_arrow",
                                         "modifiers": [
-                                            "command"
+                                            "control",
+                                            "option"
                                         ]
                                     }
                                 ],
@@ -35392,9 +35373,10 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "right_arrow",
+                                        "key_code": "down_arrow",
                                         "modifiers": [
-                                            "command"
+                                            "control",
+                                            "option"
                                         ]
                                     }
                                 ],
@@ -35449,7 +35431,15 @@
                                         ]
                                     }
                                 },
-                                "to": [],
+                                "to": [
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": [
+                                            "control",
+                                            "option"
+                                        ]
+                                    }
+                                ],
                                 "to_if_alone": [],
                                 "to_after_key_up": [],
                                 "conditions": [

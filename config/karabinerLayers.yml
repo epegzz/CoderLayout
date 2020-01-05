@@ -753,7 +753,7 @@ editing:
     i:
       # IntelliJ: move selection up
       output: 'up'
-      modifiers: ['command']
+      modifiers: ['control', 'option']
     o:
     p:
     open_bracket:
@@ -771,18 +771,18 @@ editing:
       modifiers: ['command']
     g:
     h:
+    j:
       # IntelliJ: move selection left
       output: 'left'
-      modifiers: ['command']
-    j:
+      modifiers: ['control', 'option']
+    k:
       # IntelliJ: move selection down
       output: 'down'
-      modifiers: ['command']
-    k:
+      modifiers: ['control', 'option']
+    l:
       # IntelliJ: move selection right
       output: 'right'
-      modifiers: ['command']
-    l:
+      modifiers: ['control', 'option']
     semicolon:
     quote:
     backslash:
