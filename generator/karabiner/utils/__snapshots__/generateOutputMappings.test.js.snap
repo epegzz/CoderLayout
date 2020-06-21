@@ -153,8 +153,234 @@ Array [
 ]
 `;
 
-exports[`generateOutputMappings with triggers 1`] = `
+exports[`generateOutputMappings with one multi-key trigger 1`] = `
 Array [
+  Object {
+    "description": "Layer layer0",
+    "manipulators": Array [
+      Object {
+        "conditions": Array [
+          Object {
+            "name": "trigger_x",
+            "type": "variable_unless",
+            "value": 1,
+          },
+        ],
+        "from": Object {
+          "key_code": "x",
+          "modifiers": Object {
+            "mandatory": Array [],
+            "optional": Array [
+              "any",
+            ],
+          },
+        },
+        "to": Array [
+          Object {
+            "set_variable": Object {
+              "name": "trigger_x",
+              "value": 1,
+            },
+          },
+        ],
+        "to_after_key_up": Array [
+          Object {
+            "set_variable": Object {
+              "name": "trigger_x",
+              "value": 0,
+            },
+          },
+        ],
+        "to_if_alone": Array [
+          Object {
+            "key_code": "0",
+            "modifiers": Array [],
+          },
+        ],
+        "type": "basic",
+      },
+      Object {
+        "conditions": Array [
+          Object {
+            "name": "trigger_y",
+            "type": "variable_unless",
+            "value": 1,
+          },
+        ],
+        "from": Object {
+          "key_code": "y",
+          "modifiers": Object {
+            "mandatory": Array [],
+            "optional": Array [
+              "any",
+            ],
+          },
+        },
+        "to": Array [
+          Object {
+            "set_variable": Object {
+              "name": "trigger_y",
+              "value": 1,
+            },
+          },
+        ],
+        "to_after_key_up": Array [
+          Object {
+            "set_variable": Object {
+              "name": "trigger_y",
+              "value": 0,
+            },
+          },
+        ],
+        "to_if_alone": Array [
+          Object {
+            "key_code": "0",
+            "modifiers": Array [],
+          },
+        ],
+        "type": "basic",
+      },
+    ],
+  },
+  Object {
+    "description": "Layer layer1",
+    "manipulators": Array [
+      Object {
+        "conditions": Array [
+          Object {
+            "name": "trigger_x",
+            "type": "variable_if",
+            "value": 1,
+          },
+          Object {
+            "name": "trigger_y",
+            "type": "variable_if",
+            "value": 1,
+          },
+        ],
+        "from": Object {
+          "key_code": "a",
+          "modifiers": Object {
+            "mandatory": Array [],
+            "optional": Array [
+              "any",
+            ],
+          },
+        },
+        "to": Array [
+          Object {
+            "key_code": "1",
+            "modifiers": Array [],
+          },
+        ],
+        "to_after_key_up": Array [],
+        "to_if_alone": Array [],
+        "type": "basic",
+      },
+    ],
+  },
+]
+`;
+
+exports[`generateOutputMappings with two single triggers 1`] = `
+Array [
+  Object {
+    "description": "Layer layer0",
+    "manipulators": Array [
+      Object {
+        "conditions": Array [
+          Object {
+            "name": "trigger_x",
+            "type": "variable_unless",
+            "value": 1,
+          },
+          Object {
+            "name": "trigger_y",
+            "type": "variable_unless",
+            "value": 1,
+          },
+        ],
+        "from": Object {
+          "key_code": "x",
+          "modifiers": Object {
+            "mandatory": Array [],
+            "optional": Array [
+              "any",
+            ],
+          },
+        },
+        "to": Array [
+          Object {
+            "set_variable": Object {
+              "name": "trigger_x",
+              "value": 1,
+            },
+          },
+        ],
+        "to_after_key_up": Array [
+          Object {
+            "set_variable": Object {
+              "name": "trigger_x",
+              "value": 0,
+            },
+          },
+        ],
+        "to_if_alone": Array [
+          Object {
+            "key_code": "0",
+            "modifiers": Array [],
+          },
+        ],
+        "type": "basic",
+      },
+      Object {
+        "conditions": Array [
+          Object {
+            "name": "trigger_x",
+            "type": "variable_unless",
+            "value": 1,
+          },
+          Object {
+            "name": "trigger_y",
+            "type": "variable_unless",
+            "value": 1,
+          },
+        ],
+        "from": Object {
+          "key_code": "y",
+          "modifiers": Object {
+            "mandatory": Array [],
+            "optional": Array [
+              "any",
+            ],
+          },
+        },
+        "to": Array [
+          Object {
+            "set_variable": Object {
+              "name": "trigger_y",
+              "value": 1,
+            },
+          },
+        ],
+        "to_after_key_up": Array [
+          Object {
+            "set_variable": Object {
+              "name": "trigger_y",
+              "value": 0,
+            },
+          },
+        ],
+        "to_if_alone": Array [
+          Object {
+            "key_code": "0",
+            "modifiers": Array [],
+          },
+        ],
+        "type": "basic",
+      },
+    ],
+  },
   Object {
     "description": "Layer layer1",
     "manipulators": Array [
@@ -170,16 +396,6 @@ Array [
             "type": "variable_unless",
             "value": 1,
           },
-          Object {
-            "name": "trigger_v",
-            "type": "variable_unless",
-            "value": 1,
-          },
-          Object {
-            "name": "trigger_w",
-            "type": "variable_unless",
-            "value": 1,
-          },
         ],
         "from": Object {
           "key_code": "a",
@@ -192,7 +408,7 @@ Array [
         },
         "to": Array [
           Object {
-            "key_code": "b",
+            "key_code": "1",
             "modifiers": Array [],
           },
         ],
@@ -212,16 +428,6 @@ Array [
             "type": "variable_unless",
             "value": 1,
           },
-          Object {
-            "name": "trigger_v",
-            "type": "variable_unless",
-            "value": 1,
-          },
-          Object {
-            "name": "trigger_w",
-            "type": "variable_unless",
-            "value": 1,
-          },
         ],
         "from": Object {
           "key_code": "a",
@@ -234,54 +440,7 @@ Array [
         },
         "to": Array [
           Object {
-            "key_code": "b",
-            "modifiers": Array [],
-          },
-        ],
-        "to_after_key_up": Array [],
-        "to_if_alone": Array [],
-        "type": "basic",
-      },
-    ],
-  },
-  Object {
-    "description": "Layer layer2",
-    "manipulators": Array [
-      Object {
-        "conditions": Array [
-          Object {
-            "name": "trigger_v",
-            "type": "variable_if",
-            "value": 1,
-          },
-          Object {
-            "name": "trigger_w",
-            "type": "variable_if",
-            "value": 1,
-          },
-          Object {
-            "name": "trigger_x",
-            "type": "variable_unless",
-            "value": 1,
-          },
-          Object {
-            "name": "trigger_y",
-            "type": "variable_unless",
-            "value": 1,
-          },
-        ],
-        "from": Object {
-          "key_code": "c",
-          "modifiers": Object {
-            "mandatory": Array [],
-            "optional": Array [
-              "any",
-            ],
-          },
-        },
-        "to": Array [
-          Object {
-            "key_code": "d",
+            "key_code": "1",
             "modifiers": Array [],
           },
         ],

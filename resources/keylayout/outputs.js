@@ -8,10 +8,10 @@
 module.exports = {
   // ----------------------------------------
   // special
-  DELETE: '&#x0008;',
+  DELETE: '&#x007F;',
   ENTER: '&#x000D;',
   ESCAPE: '&#x001B;',
-  FORWARD_DELETE: '&#x007F;',
+  // FORWARD_DELETE: '&#x007F;',  fn + DELETE
   RETURN: '&#x000D;',
   SPACE: '&#x0020;',
   TAB: '&#x0009;',

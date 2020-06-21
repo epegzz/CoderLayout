@@ -332,9 +332,11 @@ navigation:
     r:
     t:
     y:
-    u: 'backspace'
+    u: 'delete'
     i: 'up'
-    o: 'delete'
+    o:
+      output: 'delete'
+      modifiers: ['fn']
     p:
     open_bracket:
     close_bracket:

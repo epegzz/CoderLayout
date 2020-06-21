@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE keyboard SYSTEM "file://localhost/System/Library/DTDs/KeyboardLayout.dtd">
 <!--Generated on Sun, Dec 1, 2019 1:09 AM-->
-<keyboard group="126" id="-8182" name="CoderLayout (Sun, Jan 5, 2020 5:46 PM)" maxout="5">
+<keyboard group="126" id="-5437" name="CoderLayout (Sun, Jun 21, 2020 11:12 AM)" maxout="5">
     <layouts>
         <layout first="0" last="0" modifiers="Modifiers" mapSet="ANSI"/>
     </layouts>
@@ -77,9 +77,9 @@
             <key code="67" output="&#x0023;" />
             <key code="78" output="&#x007E;" />
             <key code="69" output="&#x002B;" />
-            <key code="76" output="&#x0040;" />
             <key code="82" output="&#x0060;" />
-            <key code="117" output="&#xF728;" />
+            <key code="83" output="&#x0040;" />
+            <key code="117" output="&#x007F;" />
             <key code="116" output="&#xF72C;" />
             <key code="121" output="&#xF72D;" />
             <key code="122" output="&#xF704;" />
@@ -158,9 +158,9 @@
             <key code="67" output="&#x007C;" />
             <key code="78" output="&#x007E;" />
             <key code="69" output="&#x0027;" />
-            <key code="76" output="&#x005C;" />
             <key code="82" output="&#x0060;" />
-            <key code="117" output="&#xF728;" />
+            <key code="83" output="&#x005C;" />
+            <key code="117" output="&#x007F;" />
             <key code="116" output="&#xF72C;" />
             <key code="121" output="&#xF72D;" />
             <key code="122" output="&#xF704;" />

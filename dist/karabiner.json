@@ -11070,7 +11070,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "keypad_enter",
+                                        "key_code": "keypad_1",
                                         "modifiers": []
                                     }
                                 ],
@@ -11309,7 +11309,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "keypad_enter",
+                                        "key_code": "keypad_1",
                                         "modifiers": [
                                             "shift"
                                         ]
@@ -15521,7 +15521,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "keypad_enter",
+                                        "key_code": "keypad_1",
                                         "modifiers": []
                                     }
                                 ],
@@ -15760,7 +15760,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "keypad_enter",
+                                        "key_code": "keypad_1",
                                         "modifiers": [
                                             "shift"
                                         ]
@@ -19719,7 +19719,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "delete_or_backspace",
+                                        "key_code": "delete_forward",
                                         "modifiers": []
                                     }
                                 ],
@@ -19834,7 +19834,9 @@
                                 "to": [
                                     {
                                         "key_code": "delete_forward",
-                                        "modifiers": []
+                                        "modifiers": [
+                                            "fn"
+                                        ]
                                     }
                                 ],
                                 "to_if_alone": [],
@@ -36831,12 +36833,6 @@
                                     }
                                 },
                                 "to": [
-                                    {
-                                        "key_code": "right_arrow",
-                                        "modifiers": [
-                                            "command"
-                                        ]
-                                    },
                                     {
                                         "key_code": "delete_or_backspace",
                                         "modifiers": [
