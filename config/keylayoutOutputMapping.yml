@@ -26,7 +26,7 @@ escape: 'escape'
 8: ['8', '(']
 9: ['9', ')']
 0: ['0', '=']
-delete_or_backspace: 'backspace'
+delete_or_backspace: 'delete'
 
 # Row 2
 tab: ['tab']
@@ -107,7 +107,7 @@ keypad_9: ['', '']
 keypad_period: ['', '']
 keypad_equal_sign: ['', '']
 keypad_comma: ['', '']
-delete_forward: 'delete'
+delete_forward: 'delete_forward'
 page_up: 'pageUp'
 page_down: 'pageDown'
 home: ['', '']

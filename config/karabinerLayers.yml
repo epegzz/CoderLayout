@@ -31,7 +31,7 @@ base:
     0: left_command
     hyphen: left_control
     equal_sign: left_shift
-    delete_or_backspace: 'backspace'
+    delete_or_backspace: 'delete'
 
     # Row 2
     tab:
@@ -130,7 +130,7 @@ shift:
     0:
     hyphen:
     equal_sign:
-    delete_or_backspace: 'backspace'
+    delete_or_backspace: 'delete'
 
     # Row 2
     tab:
@@ -225,7 +225,7 @@ coding:
     0: left_command
     hyphen: left_control
     equal_sign: left_shift
-    delete_or_backspace: 'backspace'
+    delete_or_backspace: 'delete'
 
     # Row 2
     tab:
@@ -320,7 +320,7 @@ navigation:
     0: left_command
     hyphen: left_control
     equal_sign: left_shift
-    delete_or_backspace: 'backspace'
+    delete_or_backspace: 'delete'
 
     # Row 2
     tab:
@@ -423,7 +423,7 @@ navigation_plus:
     0: left_command
     hyphen: left_control
     equal_sign: left_shift
-    delete_or_backspace: 'backspace'
+    delete_or_backspace: 'delete'
 
     # Row 2
     tab:
@@ -434,11 +434,11 @@ navigation_plus:
     t:
     y:
     u:
-      output: 'backspace'
+      output: 'delete'
       modifiers: ['option']
     i: 'pageUp'
     o:
-      output: 'delete'
+      output: 'delete_forward'
       modifiers: ['option']
     p:
     open_bracket:
@@ -530,7 +530,7 @@ numbers:
     0: left_command
     hyphen: left_control
     equal_sign: left_shift
-    delete_or_backspace: 'backspace'
+    delete_or_backspace: 'delete'
 
     # Row 2
     tab:
@@ -748,7 +748,7 @@ editing:
     t:
     y:
     u:
-      output: 'backspace'
+      output: 'delete'
       modifiers: ['command']
     i:
       # IntelliJ: move selection up
