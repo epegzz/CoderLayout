@@ -755,7 +755,7 @@ editing:
       output: 'up'
       modifiers: ['control', 'option']
     o:
-      output: 'delete'
+      output: 'delete_forward'
       modifiers: ['command']
     p:
     open_bracket:
