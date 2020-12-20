@@ -231,16 +231,16 @@ coding:
     tab:
     q: '…'
     w: '_'
-    e: '['
+    e: '^' # '[' for non Apple M1 computers
     r: ']'
-    t: '^'
+    t: '[' # '^' for non Apple M1 computers
     y: '!'
-    u: '<'
+    u: '°' # '<' for non Apple M1 computers
     i: '>'
     o: '='
     p: '&'
     open_bracket: '@'
-    close_bracket: '°'
+    close_bracket: '<' # '°' for non Apple M1 computers
     return_or_enter: 'return'
 
     # Row 3

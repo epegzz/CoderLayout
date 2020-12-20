@@ -11,15 +11,19 @@ For now it does not explain much I suppose, but I'll add some more info when I f
 1. Install [Karabiner-Elements](https://pqrs.org/osx/karabiner/)
 
 2. Copy the karabiner.json
-```bash
-$ cp dist/karabiner.json ~/.config/karabiner
-```
+
+        $ cp dist/karabiner.json ~/.config/karabiner
+
+   On Apple M1 computers, you need to use the `karabiner.m1.json` instead (This was generated with an adjusted `karabinerLayers.yml`)
+
+        $ cp dist/karabiner.m1.json ~/.config/karabiner/karabiner.json
+
 
 3. Copy the keylayout files:
-```bash
-$ sudo cp dist/CoderLayout.icns /Library/Keyboard\ Layouts
-$ sudo cp dist/CoderLayout.keylayout /Library/Keyboard\ Layouts
-```
+
+        $ sudo cp dist/CoderLayout.icns /Library/Keyboard\ Layouts
+        $ sudo cp dist/CoderLayout.keylayout /Library/Keyboard\ Layouts
+
 
 4. Add "CoderLayout" as input source in the Keyboard settings dialog
 
