@@ -1,3 +1,4 @@
+const { map } = require('lodash')
 const generateOutputMappings = require('./generateOutputMappings')
 
 describe('generateOutputMappings', () => {
@@ -81,6 +82,51 @@ describe('generateOutputMappings', () => {
     }
 
     expect(generateOutputMappings(karabinerConfig)).toMatchSnapshot()
+  })
+
+  test('with m1 suffix', () => {
+    const karabinerConfig = {
+      layers: {
+        layer1: {
+          mapping: [
+            { from: 'a', to: [{ keyName: '1' }] },
+            { from: 'a~m1', to: [{ keyName: '2' }] },
+            { from: 'b~x', to: [{ keyName: '3' }] },
+            { from: 'b~y', to: [{ keyName: '4' }] },
+            { from: 'c~m1', to: [{ keyName: '5' }] },
+            { from: 'd', to: [{ keyName: '6' }] },
+          ],
+        },
+      },
+    }
+
+    // No variant
+    expect(
+      map(
+        generateOutputMappings(karabinerConfig)[0].manipulators,
+        entry => `${entry.from.key_code} => ${entry.to[0].key_code}`
+      )
+    ).toMatchInlineSnapshot(`
+            Array [
+              "a => 1",
+              "d => 6",
+            ]
+        `)
+
+    // M1 variant
+    expect(
+      map(
+        generateOutputMappings({ ...karabinerConfig, variant: 'm1' })[0]
+          .manipulators,
+        entry => `${entry.from.key_code} => ${entry.to[0].key_code}`
+      )
+    ).toMatchInlineSnapshot(`
+      Array [
+        "a => 2",
+        "c => 5",
+        "d => 6",
+      ]
+    `)
   })
 
   test('disabling keys', () => {

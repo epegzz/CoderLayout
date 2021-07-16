@@ -33,7 +33,8 @@ function generateKarabinerConfig ({
   const result = {
     triggerKeys: collectTriggersFromLayers(karabinerLayers, 'keys'),
     triggerVariables: collectTriggersFromLayers(karabinerLayers, 'variables'),
-    layers: {}
+    layers: {},
+    variant: process.env.VARIANT,
   }
 
   for (const [layerName, layer] of Object.entries(karabinerLayers)) {

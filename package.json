@@ -9,6 +9,7 @@
   "scripts": {
     "test": "jest \"(generator|config)/.*\\.test\\.js$\"",
     "generate:karabiner": "node generator/karabiner",
+    "generate:karabiner:m1": "VARIANT=m1 node generator/karabiner",
     "generate:keylayout": "node generator/keylayout",
     "generate:icns": "./generator/keylayout/generate-icns.sh resources/icns.png dist/CoderLayout"
   },

@@ -1,9 +1,10 @@
-const { without, flatten, compact } = require('lodash')
+const { without, flatten, compact, split, find } = require('lodash')
 
 function generateOutputMappings(karabinerConfig) {
   const rules = []
 
   const allTriggerKeys = karabinerConfig.triggerKeys || []
+  const variant = karabinerConfig.variant // i.e "m1"
 
   for (const [layerName, layer] of Object.entries(karabinerConfig.layers)) {
     const manipulators = []
@@ -14,6 +15,7 @@ function generateOutputMappings(karabinerConfig) {
         manipulators,
         mapping,
         allTriggerKeys,
+        variant,
       })
     } else {
       for (let triggerKeyCombo of triggerKeyCombos) {
@@ -25,6 +27,7 @@ function generateOutputMappings(karabinerConfig) {
           mapping,
           allTriggerKeys,
           triggerCombo: triggerKeyCombo,
+          variant,
         })
       }
     }
@@ -41,13 +44,35 @@ function generateAndAppendLayerManipulators({
   allTriggerKeys,
   triggerCombo = [],
   manipulators,
+  variant = undefined, // i.e "m1"
 }) {
   for (const { from, to: toEntries = [] } of mapping) {
     const fromIsTriggerKey = allTriggerKeys.includes(from)
+
+    const fromVariant = split(from, '~')[1]
+    const fromWithoutVariantSuffix = split(from, '~')[0]
+
+    if (Boolean(fromVariant) && fromVariant !== variant) {
+      continue
+    }
+
+    if(Boolean(variant) && !fromVariant) {
+      const hasVariant = (
+        find(mapping, ({ from }) => {
+          const _from = split(from, '~')[0]
+          const _variant = split(from, '~')[1]
+          return fromWithoutVariantSuffix === _from 
+            && Boolean(_variant)
+            && _variant == variant
+        })
+      )
+      if (hasVariant) continue
+    }
+
     const manipulator = {
       type: 'basic',
       from: {
-        key_code: from,
+        key_code: fromWithoutVariantSuffix,
         modifiers: {
           mandatory: [],
           optional: ['any'],
@@ -77,13 +102,13 @@ function generateAndAppendLayerManipulators({
     if (fromIsTriggerKey) {
       manipulator.to.push({
         set_variable: {
-          name: `trigger_${from}`,
+          name: `trigger_${fromWithoutVariantSuffix}`,
           value: 1,
         },
       })
       manipulator.to_after_key_up.push({
         set_variable: {
-          name: `trigger_${from}`,
+          name: `trigger_${fromWithoutVariantSuffix}`,
           value: 0,
         },
       })
