@@ -1,0 +1,276 @@
+---
+global:
+  check_for_updates_on_startup: true
+  show_in_menu_bar: true
+  show_profile_name_in_menu_bar: false
+
+profiles:
+  - complex_modifications:
+      parameters:
+        basic.simultaneous_threshold_milliseconds: 50
+        basic.to_delayed_action_delay_milliseconds: 500
+        basic.to_if_alone_timeout_milliseconds: 200
+        basic.to_if_held_down_threshold_milliseconds: 0
+        mouse_motion_to_scroll.speed: 100
+
+      rules:      
+        - description: Activates/Deactivates Eye Tracking via right_command
+          manipulators:
+
+            # tab-cmd_left = toggle eye tracker mouse control
+            #################################################
+            - type: basic
+              from:
+                key_code: right_command
+                modifiers:
+                  optional:
+                    - shift
+                    - command   
+                    - control
+                    - fn
+                    - option
+
+              to:
+                #- key_code: q # j
+                - key_code: f13 # f
+                  modifiers: []
+                - set_variable:
+                    name: trigger_mouse_layer
+                    value: 1
+
+              to_after_key_up:
+                - set_variable:
+                    name: trigger_mouse_layer
+                    value: 0
+                - key_code: f14 # f
+                  modifiers: []
+              #   #- key_code: w # d
+              #   - key_code: f14 # v
+              #     modifiers:
+              #       - command
+
+
+            
+            
+
+
+            # tab + cmd_left + n = Left Mouse Click
+            #################################################
+            - type: basic
+              from:
+                key_code: j # n
+                modifiers:
+                  optional:
+                    - shift
+                    - command   
+                    - control
+                    - fn
+                    - option
+              to:
+                - repeat: true
+                  pointing_button: button1
+                  modifiers: []
+                # - set_variable:
+                #     name: app_switcher_open
+                #     value: 0  
+              conditions:
+                - type: variable_if
+                  name: trigger_mouse_layer
+                  value: 1
+
+            
+
+            # tab + cmd_left + b = Left Command Mouse Click
+            #################################################
+            # - type: basic
+            #   from:
+            #     key_code: j # b
+            #   to:
+            #     - repeat: true
+            #       pointing_button: button1
+            #       modifiers:
+            #         - command
+            #     # - set_variable:
+            #     #     name: app_switcher_open
+            #     #     value: 0    
+            #   conditions:
+            #     - type: variable_if
+            #       name: trigger_mouse_layer
+            #       value: 1
+
+            # tab + cmd_left + n = Right Mouse Click
+            #################################################
+            - type: basic
+              from:
+                key_code: l # s
+              to:
+                - repeat: true
+                  pointing_button: button2
+                  modifiers: []
+              conditions:
+                - type: variable_if
+                  name: trigger_mouse_layer
+                  value: 1
+
+
+            # Scroll Up
+            #################################################
+            - type: basic
+              from:
+                key_code: i # l
+              to:
+                - mouse_key:
+                    vertical_wheel: -100
+
+              conditions:
+                - type: variable_if
+                  name: trigger_mouse_layer
+                  value: 1           
+                  
+             # Scroll Down
+            #################################################
+            - type: basic
+              from:
+                key_code: k # r
+              to:
+                - mouse_key:
+                    vertical_wheel: 100
+
+              conditions:
+                - type: variable_if
+                  name: trigger_mouse_layer
+                  value: 1                     
+
+            # App Switcher
+            #######################n##########################
+            - type: basic
+              from:
+                key_code: left_command # 
+              to:
+                - key_code: f15
+                  modifiers:
+                    - control
+                
+
+              to_after_key_up:
+                # - key_code: f15
+                #   modifiers:
+                #     - control
+                - set_variable:
+                    name: app_switcher_open
+                    value: 0
+
+              conditions:
+                - type: variable_if
+                  name: trigger_mouse_layer
+                  value: 1
+                
+
+
+            # App Switcher
+            #######################n##########################
+            - type: basic
+              from:
+                key_code: o # 
+              to:
+                - key_code: escape
+                  modifiers: []
+                - set_variable:
+                    name: app_switcher_open
+                    value: 0  
+
+              conditions:
+                - type: variable_if
+                  name: trigger_mouse_layer
+                  value: 1
+                - type: variable_if
+                  name: app_switcher_open
+                  value: 1
+
+            # Escape
+            #################################################
+            - type: basic
+              from:
+                key_code: p # w
+              to:
+                - key_code: escape
+                  modifiers: []
+                - set_variable:
+                    name: app_switcher_open
+                    value: 0
+                                                                        
+              conditions:
+                - type: variable_if
+                  name: trigger_mouse_layer
+                  value: 1
+                  
+             # Enter
+            #################################################
+            - type: basic
+              from:
+                key_code: m # z
+              to:
+                - key_code: return_or_enter
+                  modifiers: []
+                - set_variable:
+                    name: app_switcher_open
+                    value: 0
+                                                                        
+              conditions:
+                - type: variable_if
+                  name: trigger_mouse_layer
+                  value: 1
+                  
+
+
+            # DDD: change or remove
+            # tab + cmd_left + Spacebar = Shift (so that we can shift-click)
+            #################################################
+            - type: basic
+              from:
+                key_code: spacebar
+              to:
+                - key_code: left_shift
+                  modifiers: []
+              conditions:
+                - type: variable_if
+                  name: trigger_mouse_layer
+                  value: 1
+
+            # tab + cmd_left + Backspace = Turn of eye tracker
+            #################################################
+            - type: basic
+              from:
+                key_code: delete_or_backspace  
+              to:
+                - key_code: delete_or_backspace  
+                  modifiers:
+                    - option
+                    - control
+                    - command
+                
+
+            # tab + cmd_right + Backspace = Calibrate
+            #################################################
+            - type: basic
+              from:
+                key_code: return_or_enter
+              to:
+                - shell_command: >-
+                    echo "from talon_plugins import eye_mouse;
+                    eye_mouse.calib_start();" | ~/.talon/bin/repl
+              conditions:
+                - type: variable_if
+                  name: trigger_mouse_layer
+                  value: 1
+
+
+    devices: []
+    name: Default profile
+    selected: true
+    simple_modifications: []
+    virtual_hid_keyboard:
+      caps_lock_delay_milliseconds: 0
+      country_code: 0
+      keyboard_type: ansi
+      mouse_key_xy_scale: 100

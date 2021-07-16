@@ -10,13 +10,22 @@ function generateOutputMappings(karabinerConfig) {
     const description = `Layer ${layerName}`
     const { triggerKeys: triggerKeyCombos = [], mapping } = layer
     if (!triggerKeyCombos.length) {
-      generateAndAppendManipulators({ manipulators, mapping, allTriggerKeys })
+      generateAndAppendLayerManipulators({
+        manipulators,
+        mapping,
+        allTriggerKeys,
+      })
     } else {
       for (let triggerKeyCombo of triggerKeyCombos) {
         if (!Array.isArray(triggerKeyCombo)) {
           triggerKeyCombo = [triggerKeyCombo]
         }
-        generateAndAppendManipulators({ manipulators, mapping, allTriggerKeys, triggerCombo: triggerKeyCombo })
+        generateAndAppendLayerManipulators({
+          manipulators,
+          mapping,
+          allTriggerKeys,
+          triggerCombo: triggerKeyCombo,
+        })
       }
     }
     rules.push({
@@ -27,8 +36,13 @@ function generateOutputMappings(karabinerConfig) {
   return rules
 }
 
-function generateAndAppendManipulators({ mapping, allTriggerKeys, triggerCombo = [], manipulators }) {
-  for (const { from, to: toEntries = []} of mapping) {
+function generateAndAppendLayerManipulators({
+  mapping,
+  allTriggerKeys,
+  triggerCombo = [],
+  manipulators,
+}) {
+  for (const { from, to: toEntries = [] } of mapping) {
     const fromIsTriggerKey = allTriggerKeys.includes(from)
     const manipulator = {
       type: 'basic',
@@ -46,10 +60,18 @@ function generateAndAppendManipulators({ mapping, allTriggerKeys, triggerCombo =
     }
 
     for (const toEntry of compact(toEntries)) {
-      manipulator[fromIsTriggerKey ? 'to_if_alone' : 'to'].push({
-        key_code: toEntry.keyName,
-        modifiers: toEntry.modifiers,
-      })
+      let outToEntry
+
+      if (toEntry.keyName) {
+        outToEntry = {
+          key_code: toEntry.keyName,
+          modifiers: toEntry.modifiers,
+        }
+      } else {
+        outToEntry = toEntry
+      }
+
+      manipulator[fromIsTriggerKey ? 'to_if_alone' : 'to'].push(outToEntry)
     }
 
     if (fromIsTriggerKey) {
@@ -71,33 +93,34 @@ function generateAndAppendManipulators({ mapping, allTriggerKeys, triggerCombo =
     const unusedTriggerKeys = without(allTriggerKeys, ...usedTriggerKeys)
 
     manipulator.conditions.push(
-      ...usedTriggerKeys.map(triggerKey =>
-        ({
-          type: 'variable_if',
-          name: `trigger_${triggerKey}`,
-          value: 1,
-        }),
-      ),
-      ...unusedTriggerKeys.map(triggerKey =>
-        ({
-          type: 'variable_unless',
-          name: `trigger_${triggerKey}`,
-          value: 1,
-        }),
-      ),
+      ...usedTriggerKeys.map(triggerKey => ({
+        type: 'variable_if',
+        name: `trigger_${triggerKey}`,
+        value: 1,
+      })),
+      ...unusedTriggerKeys.map(triggerKey => ({
+        type: 'variable_unless',
+        name: `trigger_${triggerKey}`,
+        value: 1,
+      }))
     )
+
+    console.log('>>>', { manipulator, toEntries })
 
     const isUsefulMapping =
       !manipulator.to.length ||
       fromIsTriggerKey ||
       toEntries.length > 1 ||
       (toEntries.length > 0 && toEntries[0].from !== toEntries[0].keyName) ||
+      (toEntries.length > 0 && toEntries[0].shellCommand) ||
       triggerCombo.length
 
     if (isUsefulMapping) {
       manipulators.push(manipulator)
     } else {
-      console.log(`Ignoring useless mapping: ${JSON.stringify(manipulator, false, 2)}`)
+      console.log(
+        `Ignoring useless mapping: ${JSON.stringify(manipulator, false, 2)}`
+      )
     }
   }
 }

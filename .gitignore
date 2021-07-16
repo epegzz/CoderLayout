@@ -1,4 +1,5 @@
 .idea
 node_modules
 mutagen*
-
+.DS_Store
+*.code-workspace

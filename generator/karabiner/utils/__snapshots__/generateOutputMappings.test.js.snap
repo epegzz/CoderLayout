@@ -120,6 +120,36 @@ Array [
 ]
 `;
 
+exports[`generateOutputMappings shell command 1`] = `
+Array [
+  Object {
+    "description": "Layer layer1",
+    "manipulators": Array [
+      Object {
+        "conditions": Array [],
+        "from": Object {
+          "key_code": "a",
+          "modifiers": Object {
+            "mandatory": Array [],
+            "optional": Array [
+              "any",
+            ],
+          },
+        },
+        "to": Array [
+          Object {
+            "shell_command": "foo",
+          },
+        ],
+        "to_after_key_up": Array [],
+        "to_if_alone": Array [],
+        "type": "basic",
+      },
+    ],
+  },
+]
+`;
+
 exports[`generateOutputMappings with modifiers 1`] = `
 Array [
   Object {
@@ -165,6 +195,11 @@ Array [
             "type": "variable_unless",
             "value": 1,
           },
+          Object {
+            "name": "trigger_y",
+            "type": "variable_unless",
+            "value": 1,
+          },
         ],
         "from": Object {
           "key_code": "x",
@@ -201,6 +236,11 @@ Array [
       },
       Object {
         "conditions": Array [
+          Object {
+            "name": "trigger_x",
+            "type": "variable_unless",
+            "value": 1,
+          },
           Object {
             "name": "trigger_y",
             "type": "variable_unless",
