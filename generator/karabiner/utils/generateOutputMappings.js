@@ -112,7 +112,7 @@ function generateAndAppendLayerManipulators({
       fromIsTriggerKey ||
       toEntries.length > 1 ||
       (toEntries.length > 0 && toEntries[0].from !== toEntries[0].keyName) ||
-      (toEntries.length > 0 && toEntries[0].shellCommand) ||
+      (toEntries.length > 0 && toEntries[0].shell_command) ||
       triggerCombo.length
 
     if (isUsefulMapping) {

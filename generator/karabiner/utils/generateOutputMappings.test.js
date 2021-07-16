@@ -116,7 +116,7 @@ describe('generateOutputMappings', () => {
     const karabinerConfig = {
       layers: {
         layer1: {
-          mapping: [{ from: 'a', to: [{ shellCommand: 'foo' }] }],
+          mapping: [{ from: 'a', to: [{ shell_command: 'foo' }] }],
         },
       },
     }
