@@ -82,7 +82,7 @@ base:
     # Row 5
     # fn:
     left_control:
-    left_alt:
+    left_alt: left_command
     left_command:
     spacebar: ' '
     right_command:
@@ -816,3 +816,4 @@ editing:
     up_arrow: up_arrow
     down_arrow: down_arrow
     right_arrow: right_arrow
+
