@@ -27,6 +27,8 @@ For now it does not explain much I suppose, but I'll add some more info when I f
 
 4. Add "CoderLayout" as input source in the Keyboard settings dialog
 
+5. The layout uses the F-keys. Make sure to disable the key bindings for F14/F15 which by default control the display brightness.
+
 ## App Configuration
 
 ### Navigation Layer Plus (M1 + Space)

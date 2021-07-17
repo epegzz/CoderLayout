@@ -9,9 +9,12 @@ const TEMPLATE_KARABINER_YML_FILENAME = path.resolve(
   __dirname,
   'karabiner.template.yml'
 )
+
 const DIST_KARABINER_JSON_FILENAME = path.resolve(
   __dirname,
-  '../../dist/karabiner.json'
+  `../../dist/karabiner${
+    process.env.VARIANT ? `.${process.env.VARIANT}` : ''
+  }.json`
 )
 
 const configOut = loadYaml(TEMPLATE_KARABINER_YML_FILENAME)
