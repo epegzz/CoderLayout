@@ -10904,7 +10904,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "non_us_backslash",
+                                        "key_code": "grave_accent_and_tilde",
                                         "modifiers": []
                                     }
                                 ],
@@ -11018,7 +11018,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "grave_accent_and_tilde",
+                                        "key_code": "non_us_backslash",
                                         "modifiers": []
                                     }
                                 ],
@@ -11134,7 +11134,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "non_us_backslash",
+                                        "key_code": "grave_accent_and_tilde",
                                         "modifiers": [
                                             "shift"
                                         ]
@@ -11427,7 +11427,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "grave_accent_and_tilde",
+                                        "key_code": "non_us_backslash",
                                         "modifiers": [
                                             "shift"
                                         ]
@@ -15355,7 +15355,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "non_us_backslash",
+                                        "key_code": "grave_accent_and_tilde",
                                         "modifiers": []
                                     }
                                 ],
@@ -15469,7 +15469,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "grave_accent_and_tilde",
+                                        "key_code": "non_us_backslash",
                                         "modifiers": []
                                     }
                                 ],
@@ -15585,7 +15585,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "non_us_backslash",
+                                        "key_code": "grave_accent_and_tilde",
                                         "modifiers": [
                                             "shift"
                                         ]
@@ -15878,7 +15878,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "grave_accent_and_tilde",
+                                        "key_code": "non_us_backslash",
                                         "modifiers": [
                                             "shift"
                                         ]
